@@ -433,7 +433,11 @@ li.main-category.cat:hover .category-wrap {
   .input {
     margin: 0px 0;
   }
+  .expand_icon{
+    display: none;
+  }
 }
+
 
 .sidebar_icon {
   color: #fff;
