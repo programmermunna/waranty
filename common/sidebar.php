@@ -88,6 +88,9 @@
         <a href="mail-setting.php">
           <button class="sub_link">Mail Setting</button>
         </a>
+        <a href="invoice-setting.php">
+          <button class="sub_link">Invoice Setting</button>
+        </a>
       </div>
     </div>
   <?php } ?>

@@ -25,7 +25,7 @@
   <!-- Page Content -->
   <section style="background:#fff;margin-top:2.6%;" class="content_wrapper">
    <div style="border:2px solid #dfdfdf;" class="w-full">
-     <h3 style="width:100%;margin:0 auto;background:#065CB6;color:#fff;padding:20px;"><?php echo $setting['name'];?></h3>
+     <h3 style="width:100%;margin:0 auto;background:#065CB6;color:#fff;padding:20px;"><?php echo $invoice['name'];?></h3>
     <div class="invoice">      
       <div>
             <div style="padding:0 10px">
@@ -90,27 +90,24 @@
                 </div>
             </div>
 
-            <div style="margin-top:20px">Congratulations on the sale.<span style="float:right ;"><?php echo $setting['phone'];?></span></div>
-            <div style="margin-bottom:20px 0">Copyright&copy; <?php echo $setting['name'];?> <span style="float:right ;"><?php echo $setting['email'];?></span></div>
+            <div style="margin-top:20px">Congratulations on the sale.<span style="float:right ;"><?php echo $invoice['phone'];?></span></div>
+            <div style="margin-bottom:20px 0">Copyright&copy; <?php echo $invoice['website'];?> <span style="float:right ;"><?php echo $invoice['email'];?></span></div>
 
         </div>
     </div>
     </div>
     <form action="" method="POST">
-    <div style="text-align:center; padding-top:10px;">
+    <div class="invoice_actions" style="text-align:center; padding-top:10px;">
 
 <?php
 if(isset($_GET['src'])){
     if($_GET['src']=='pending'){ ?>
-      <a style="padding:10px 20px; background:#065CB6;color:#fff;border-radius:5px;margin:0 10px;" href="pending-delivery.php">Back</a>
+       <a style="padding:10px 20px; background:#065CB6;color:#fff;border-radius:5px;margin:0 10px;" href="pending-delivery.php">Back</a>
  <?php  }elseif($_GET['src']=='success'){ ?>
- <a  style="padding:10px 20px; background:#065CB6;color:#fff;border-radius:5px;margin:0 10px;" href="success-delivery.php">Back</a>
+      <a style="padding:10px 20px; background:#065CB6;color:#fff;border-radius:5px;margin:0 10px;" href="success-delivery.php">Back</a>
 <?php }}else{?>
-
       <a  style="padding:10px 20px; background:#065CB6;color:#fff;border-radius:5px;margin:0 10px;" href="pos-index.php">Back</a>
-
-<?php } ?>  
-
+<?php } ?>
       <button onclick='window.print()' style="padding:10px 20px; background:#065CB6;color:#fff;border-radius:5px;margin:0 10px;">Print</button>
       <button type="submit" name="submit" style="padding:10px 20px; background:#065CB6;color:#fff;border-radius:5px;margin:0 10px;">Send Mail</button>
     </div>

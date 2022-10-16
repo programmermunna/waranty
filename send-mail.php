@@ -18,7 +18,7 @@ ob_start(); ?>
   <section style="background:#fff;">
    <div style="border:2px solid #dfdfdf;">
     <div>      
-        <h2 style="background:#065CB6;color:#fff;padding:4% 2%;margin:0px;"><?php echo $setting['name'];?></h2>
+        <h2 style="background:#065CB6;color:#fff;padding:4% 2%;margin:0px;"><?php echo $invoice['name'];?></h2>
       <div style="padding:2%">
             <div>
                 <p ><b>Date:</b> <?php $time = time();echo date('d-m-y',$time);?></p>
@@ -85,11 +85,11 @@ ob_start(); ?>
             <div style="font-size:80%;overflow:auto">
              <div style="float:left">
                 <div>Congratulations on the sale.</div>
-                <div>Copyright&copy; <?php echo $setting['name'];?></div>
+                <div>Copyright&copy; <?php echo $invoice['website'];?></div>
              </div>
              <div style="float:right;">
-                <div><?php echo $setting['phone'];?></div>
-                <div><?php echo $setting['email'];?></div>
+                <div><?php echo $invoice['phone'];?></div>
+                <div><?php echo $invoice['email'];?></div>
             </div>
         </div>
 
@@ -129,7 +129,7 @@ ob_start(); ?>
       <section style="background:#fff;">
        <div style="border:2px solid #dfdfdf;">
         <div>      
-            <h2 style="background:#065CB6;color:#fff;padding:4% 2%;margin:0px;"><?php echo $setting['name'];?></h2>
+            <h2 style="background:#065CB6;color:#fff;padding:4% 2%;margin:0px;"><?php echo $invoice['name'];?></h2>
           <div style="padding:2%">
                 <div>
                     <p ><b>Date:</b> <?php $time = time();echo date('d-m-y',$time);?></p>
@@ -196,11 +196,11 @@ ob_start(); ?>
                 <div style="font-size:80%;overflow:auto">
                  <div style="float:left">
                     <div>Congratulations on the sale.</div>
-                    <div>Copyright&copy; <?php echo $setting['name'];?></div>
+                    <div>Copyright&copy; <?php echo $invoice['website'];?></div>
                  </div>
                  <div style="float:right;">
-                    <div><?php echo $setting['phone'];?></div>
-                    <div><?php echo $setting['email'];?></div>
+                    <div><?php echo $invoice['phone'];?></div>
+                    <div><?php echo $invoice['email'];?></div>
                 </div>
             </div>
     
@@ -240,7 +240,7 @@ ob_start(); ?>
           <section style="background:#fff;">
            <div style="border:2px solid #dfdfdf;">
             <div>      
-                <h2 style="background:#065CB6;color:#fff;padding:4% 2%;margin:0px;"><?php echo $setting['name'];?></h2>
+                <h2 style="background:#065CB6;color:#fff;padding:4% 2%;margin:0px;"><?php echo $invoice['name'];?></h2>
               <div style="padding:2%">
                     <div>
                         <p ><b>Date:</b> <?php $time = time();echo date('d-m-y',$time);?></p>
@@ -307,11 +307,11 @@ ob_start(); ?>
                     <div style="font-size:80%;overflow:auto">
                      <div style="float:left">
                         <div>Congratulations on the sale.</div>
-                        <div>Copyright&copy; <?php echo $setting['name'];?></div>
+                        <div>Copyright&copy; <?php echo $invoice['website'];?></div>
                      </div>
                      <div style="float:right;">
-                        <div><?php echo $setting['phone'];?></div>
-                        <div><?php echo $setting['email'];?></div>
+                        <div><?php echo $invoice['phone'];?></div>
+                        <div><?php echo $invoice['email'];?></div>
                     </div>
                 </div>
         
@@ -351,7 +351,7 @@ ob_start(); ?>
               <section style="background:#fff;">
                <div style="border:2px solid #dfdfdf;">
                 <div>      
-                    <h2 style="background:#065CB6;color:#fff;padding:4% 2%;margin:0px;"><?php echo $setting['name'];?></h2>
+                    <h2 style="background:#065CB6;color:#fff;padding:4% 2%;margin:0px;"><?php echo $invoice['name'];?></h2>
                   <div style="padding:2%">
                         <div>
                             <p ><b>Date:</b> <?php $time = time();echo date('d-m-y',$time);?></p>
@@ -418,11 +418,11 @@ ob_start(); ?>
                         <div style="font-size:80%;overflow:auto">
                          <div style="float:left">
                             <div>Congratulations on the sale.</div>
-                            <div>Copyright&copy; <?php echo $setting['name'];?></div>
+                            <div>Copyright&copy; <?php echo $invoice['website'];?></div>
                          </div>
                          <div style="float:right;">
-                            <div><?php echo $setting['phone'];?></div>
-                            <div><?php echo $setting['email'];?></div>
+                            <div><?php echo $invoice['phone'];?></div>
+                            <div><?php echo $invoice['email'];?></div>
                         </div>
                     </div>
             

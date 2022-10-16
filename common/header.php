@@ -17,6 +17,7 @@ if($id<1){
 
 $setting = mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM setting"));
 $admin_info = mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM admin_info WHERE id='$id'"));
+$invoice = mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM invoice_setting WHERE id='$id'"));
 
 ?>
 

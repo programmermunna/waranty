@@ -28,7 +28,8 @@ if(isset($_POST['submit'])){
   $name = $row['name'];
   $_SESSION['admin_id'] = $id;
   setcookie('admin_id', $id , time()+86000);
-   header('location:pos-index.php');
+   $msg = "Welcome! Successfull login.";
+   header("location:pos-index.php?msg=$msg");
   }else{
      $msg = "Your Email or password is wrong!";
      header("location:login.php?msg=$msg");
@@ -106,6 +107,7 @@ if(isset($_POST['submit'])){
     </div>
   </body>
 </html>
+
 <?php if (isset($_GET['msg'])) { ?><div id="munna" data-text="<?php echo $_GET['msg']; ?>"></div><?php } ?>
 
 <script>
@@ -130,10 +132,4 @@ ${munna?.dataset?.text} </div>
 }})
 </script>
 
-
-
-<style>
-  #munna{
-    padding:30px !important;
-  }
-</style>
+<style>#munna{padding:30px !important;}</style>

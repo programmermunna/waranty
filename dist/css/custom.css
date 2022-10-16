@@ -296,15 +296,15 @@ li.main-category.cat:hover .category-wrap {
 }
 
 .cat_btn {
-  background: #2563eb;
+  background: #338FFF;
   padding: 5px 10px;
-  border-radius: 5px;
+  border-radius: 2px;
   margin: 5px;
   color: white;
 }
 
 .cat_btn2 {
-  background: red;
+  background: #338FFF;
 }
 
 .pos_category {
@@ -451,4 +451,10 @@ li.main-category.cat:hover .category-wrap {
 }
 .py-5{
   padding:5px 0;
+}
+
+@media print{
+  .invoice_actions{
+    display: none;
+  }
 }

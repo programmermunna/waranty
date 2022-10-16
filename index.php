@@ -7,6 +7,7 @@
     $pending_order = mysqli_num_rows(mysqli_query($conn,"SELECT * FROM orders WHERE status !='Success'"));
     $success_order = mysqli_num_rows(mysqli_query($conn,"SELECT * FROM orders WHERE status='Success'"));
     $customer = mysqli_num_rows(mysqli_query($conn,"SELECT * FROM customer"));
+    $moderator = mysqli_num_rows(mysqli_query($conn,"SELECT * FROM admin_info WHERE role='Moderator'"));
 
 
     $total_warranty_fee = mysqli_fetch_assoc(mysqli_query($conn,"SELECT SUM(warranty_fee) FROM orders"));    
@@ -208,6 +209,26 @@
               <div class="card_bottom">
                 <div class="card_percentage">
                   <p style="margin: 0 auto;">All Customer</p>
+                </div>
+                <div class="card_line">
+                  <div style="width: 100%" class="from-blue-500 via-blue-600 to-blue-700"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+           <!-- ------box------ -->
+          <div class="home_card">
+            <div>
+              <div class="card_top">
+                <div class="card_top_icon from-blue-500 to-blue-600">&#x2637</div>
+                <div class="card_top_info">
+                  <p class="card_top_numbers"><?php echo $moderator; ?></p>                  
+                </div>
+              </div>
+              <div class="card_bottom">
+                <div class="card_percentage">
+                  <p style="margin: 0 auto;">All Moderator</p>
                 </div>
                 <div class="card_line">
                   <div style="width: 100%" class="from-blue-500 via-blue-600 to-blue-700"></div>
