@@ -56,7 +56,7 @@ $row = mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM invoice_setting WHER
               <input type="text" name="website" value="<?php echo $row['website']?>" class="input" />
             </div>
             
-            <input class="btn submit_btn" name="submit" type="submit" value="Update" />
+            <input class="btn submit_btn" name="submit" type="submit" value="Save" />
           </form>
         </div>
       </section>

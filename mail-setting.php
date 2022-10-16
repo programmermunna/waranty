@@ -99,7 +99,7 @@ $row = mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM mail_setting WHERE i
               <label>Site Replay Email</label>
               <input type="text" name="site_replay_email" class="input" value="<?php echo $row['site_replay_email']; ?>" />
             </div>
-            <input name="mail_setting" class="btn submit_btn" type="submit" value="Update" />
+            <input name="mail_setting" class="btn submit_btn" type="submit" value="Save" />
             <input style="background:indianred" name="mail_test" class="btn submit_btn" type="submit" value="chack" />
           </form>
         </div>

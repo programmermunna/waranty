@@ -63,7 +63,7 @@ $admin_info = mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM admin_info WH
               <label>Image</label>
               <input type="file" name="file" class="input"/>
             </div>
-            <input name="submit" class="btn submit_btn" type="submit" value="Update" />
+            <input name="submit" class="btn submit_btn" type="submit" value="Save" />
           </form>
         </div>
       </section>
