@@ -50,12 +50,12 @@ if (isset($_POST['update'])) {
                 <div class="p-6">
                     <div class="pb-4 flex justify-between">
                         <p style="visibility: hidden;"></p>
-                        <button class="show_add_new_cat px-4 py-2 text-sm bg-blue-600 text-white rounded focus:ring">Add New
-                            Category</button>
+                        <button class="show_add_new_cat px-4 py-2 text-sm bg-blue-600 text-white rounded focus:ring">Add New Category</button>
                     </div>
                     <ul class="categories_ul"></ul>
                 </div>
 
+                <!-- -----------add new category -->
                 <form action="" method="POST">
                     <div class="add_category_wrapper" style="display: none;">
                         <div class="hide_add_new_cat fixed inset-0 w-full h-screen bg-black bg-opacity-50 z-40"></div>
@@ -81,18 +81,15 @@ if (isset($_POST['update'])) {
 
                             <div class="p-4 flex items-center justify-end gap-x-3 border-t mt-4">
                                 <button class="btn w-fit p-2 bg-blue-600 text-white rounded focus:ring-2" type="submit" name="submit">Create</button>
-                                <button class="btn w-fit p-2 bg-red-400 text-white rounded focus:ring-2 hide_add_new_cat">Cancel</button>
+                                <button type="button" class="btn w-fit p-2 bg-red-400 text-white rounded focus:ring-2 hide_add_new_cat">Cancel</button>
                             </div>
                         </div>
                     </div>
                 </form>
 
-
-
-
                 <!-- -----------edit category -->
                 <form action="" method="POST">
-                    <div id="edit_popup" class="add_category_wrapper" style="display: none;">
+                    <div id="edit_popup" class="edit_category" style="display: none;">
                         <div class="hide_add_new_cat fixed inset-0 w-full h-screen bg-black bg-opacity-50 z-40"></div>
                         <div class="fixed w-[96%] md:w-[500px] inset-0 m-auto bg-white rounded shadow z-50 h-fit">
                             <h1 class="p-4 border-b">
@@ -108,7 +105,7 @@ if (isset($_POST['update'])) {
 
                             <div class="p-4 flex items-center justify-end gap-x-3 border-t mt-4">
                                 <button class="btn w-fit p-2 bg-blue-600 text-white rounded focus:ring-2" type="submit" name="update">Update</button>
-                                <button class="btn w-fit p-2 bg-red-400 text-white rounded focus:ring-2 hide_add_new_cat">Cancel</button>
+                                <button type="button" class="btn w-fit p-2 bg-red-400 rounded focus:ring-2 hide_edit_category">Cancel</button>
                             </div>
                         </div>
                     </div>
@@ -124,4 +121,6 @@ if (isset($_POST['update'])) {
 <!-- Side Navbar Links -->
 <?php include("common/footer.php"); ?>
 <!-- Side Navbar Links -->
-<?php if (isset($_GET['msg'])) { ?><script>swal("Good job!", "<?php echo $_GET['msg']; ?>", "success");</script><?php } ?>
+<?php if (isset($_GET['msg'])) { ?><script>
+        swal("Good job!", "<?php echo $_GET['msg']; ?>", "success");
+    </script><?php } ?>

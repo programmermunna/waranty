@@ -214,6 +214,14 @@ all_hide_add_new_cat.forEach((ele) => {
         })
     });
 });
+const edit_category = document.querySelector('.edit_category')
+const hide_edit_category = document.querySelector('.hide_edit_category')
+if (edit_category && hide_edit_category) {
+
+    hide_edit_category.addEventListener('click', function () {
+        edit_category.style.display = 'none'
+    })
+}
 
 const allCategoryBtn = document.querySelectorAll(".cat_btn1");
 const edit_popup = document.getElementById("edit_popup");

@@ -37,7 +37,7 @@ ob_start(); ?>
             
             <div style="overflow:auto;">
                 <div >
-                    <table style="text-align:left;margin:30px auto;width:100%">
+                    <table style="text-align:left;margin:30px auto;width:100%;border-collapse: collapse;">
                         <thead>                     
                             <tr style="border:2px solid #dfdfdf;font-size:15px;">
                                 <th style="border:1px solid #dfdfdf;padding:5px;">
@@ -66,16 +66,16 @@ ob_start(); ?>
                                 <td style="border:1px solid #dfdfdf;padding:5px;"><?php echo $orders['delivery_date'];?></td>
                             </tr>
                             <tr style="border:2px solid #dfdfdf;">
+                                <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Total Fee</b></td>
+                                <td style="border:1px solid #dfdfdf;padding:5px;"><b><?php echo $orders['advance_amount']+$orders['due_amount'];?></b></td>  
+                            </tr>
+                            <tr style="border:2px solid #dfdfdf;">
                                 <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Advance Fee</b></td>
                                 <td style="border:1px solid #dfdfdf;padding:5px;"><b><?php echo $orders['advance_amount'];?></b></td>  
                             </tr>
                             <tr style="border:2px solid #dfdfdf;">
                                 <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Due</b></td>
                                 <td style="border:1px solid #dfdfdf;padding:5px;"><b><?php echo $orders['due_amount'];?></b></td>  
-                            </tr>
-                            <tr style="border:2px solid #dfdfdf;">
-                                <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Total Fee</b></td>
-                                <td style="border:1px solid #dfdfdf;padding:5px;"><b><?php echo $orders['advance_amount']+$orders['due_amount'];?></b></td>  
                             </tr>
                         </tbody>
                     </table>
@@ -148,7 +148,7 @@ ob_start(); ?>
                 
                 <div style="overflow:auto;">
                     <div >
-                        <table style="text-align:left;margin:30px auto;width:100%">
+                        <table style="text-align:left;margin:30px auto;width:100%;border-collapse: collapse;">
                             <thead>                     
                                 <tr style="border:2px solid #dfdfdf;font-size:15px;">
                                     <th style="border:1px solid #dfdfdf;padding:5px;">
@@ -177,16 +177,16 @@ ob_start(); ?>
                                     <td style="border:1px solid #dfdfdf;padding:5px;"><?php echo $orders['delivery_date'];?></td>
                                 </tr>
                                 <tr style="border:2px solid #dfdfdf;">
+                                    <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Total Fee</b></td>
+                                    <td style="border:1px solid #dfdfdf;padding:5px;"><b><?php echo $orders['advance_amount']+$orders['due_amount'];?></b></td>  
+                                </tr>
+                                <tr style="border:2px solid #dfdfdf;">
                                     <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Advance Fee</b></td>
                                     <td style="border:1px solid #dfdfdf;padding:5px;"><b><?php echo $orders['advance_amount'];?></b></td>  
                                 </tr>
                                 <tr style="border:2px solid #dfdfdf;">
                                     <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Due</b></td>
                                     <td style="border:1px solid #dfdfdf;padding:5px;"><b><?php echo $orders['due_amount'];?></b></td>  
-                                </tr>
-                                <tr style="border:2px solid #dfdfdf;">
-                                    <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Total Fee</b></td>
-                                    <td style="border:1px solid #dfdfdf;padding:5px;"><b><?php echo $orders['advance_amount']+$orders['due_amount'];?></b></td>  
                                 </tr>
                             </tbody>
                         </table>
@@ -259,7 +259,7 @@ ob_start(); ?>
                     
                     <div style="overflow:auto;">
                         <div >
-                            <table style="text-align:left;margin:30px auto;width:100%">
+                            <table style="text-align:left;margin:30px auto;width:100%;border-collapse: collapse;">
                                 <thead>                     
                                     <tr style="border:2px solid #dfdfdf;font-size:15px;">
                                         <th style="border:1px solid #dfdfdf;padding:5px;">
@@ -288,16 +288,16 @@ ob_start(); ?>
                                         <td style="border:1px solid #dfdfdf;padding:5px;"><?php echo $orders['delivery_date'];?></td>
                                     </tr>
                                     <tr style="border:2px solid #dfdfdf;">
+                                        <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Total Fee</b></td>
+                                        <td style="border:1px solid #dfdfdf;padding:5px;"><b><?php echo $orders['advance_amount']+$orders['due_amount'];?></b></td>  
+                                    </tr>
+                                    <tr style="border:2px solid #dfdfdf;">
                                         <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Advance Fee</b></td>
                                         <td style="border:1px solid #dfdfdf;padding:5px;"><b><?php echo $orders['advance_amount'];?></b></td>  
                                     </tr>
                                     <tr style="border:2px solid #dfdfdf;">
                                         <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Due</b></td>
                                         <td style="border:1px solid #dfdfdf;padding:5px;"><b><?php echo $orders['due_amount'];?></b></td>  
-                                    </tr>
-                                    <tr style="border:2px solid #dfdfdf;">
-                                        <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Total Fee</b></td>
-                                        <td style="border:1px solid #dfdfdf;padding:5px;"><b><?php echo $orders['advance_amount']+$orders['due_amount'];?></b></td>  
                                     </tr>
                                 </tbody>
                             </table>
@@ -370,7 +370,7 @@ ob_start(); ?>
                         
                         <div style="overflow:auto;">
                             <div >
-                                <table style="text-align:left;margin:30px auto;width:100%">
+                                <table style="text-align:left;margin:30px auto;width:100%;border-collapse: collapse;">
                                     <thead>                     
                                         <tr style="border:2px solid #dfdfdf;font-size:15px;">
                                             <th style="border:1px solid #dfdfdf;padding:5px;">
@@ -399,16 +399,16 @@ ob_start(); ?>
                                             <td style="border:1px solid #dfdfdf;padding:5px;"><?php echo $orders['delivery_date'];?></td>
                                         </tr>
                                         <tr style="border:2px solid #dfdfdf;">
+                                            <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Total Fee</b></td>
+                                            <td style="border:1px solid #dfdfdf;padding:5px;"><b><?php echo $orders['advance_amount']+$orders['due_amount'];?></b></td>  
+                                        </tr>
+                                        <tr style="border:2px solid #dfdfdf;">
                                             <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Advance Fee</b></td>
                                             <td style="border:1px solid #dfdfdf;padding:5px;"><b><?php echo $orders['advance_amount'];?></b></td>  
                                         </tr>
                                         <tr style="border:2px solid #dfdfdf;">
                                             <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Due</b></td>
                                             <td style="border:1px solid #dfdfdf;padding:5px;"><b><?php echo $orders['due_amount'];?></b></td>  
-                                        </tr>
-                                        <tr style="border:2px solid #dfdfdf;">
-                                            <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Total Fee</b></td>
-                                            <td style="border:1px solid #dfdfdf;padding:5px;"><b><?php echo $orders['advance_amount']+$orders['due_amount'];?></b></td>  
                                         </tr>
                                     </tbody>
                                 </table>

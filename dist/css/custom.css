@@ -449,3 +449,6 @@ li.main-category.cat:hover .category-wrap {
   justify-content: center;
   background: linear-gradient(to right, #317EEB,#2563eb);
 }
+.py-5{
+  padding:5px 0;
+}

@@ -45,7 +45,7 @@
             
             <div >
                 <div style="width: 100%; overflow:auto">
-                    <table class="table" style="text-align:left;margin:30px auto;width:100%">
+                    <table class="table" style="text-align:left;margin:30px auto;width:100%;border-collapse: collapse;">
                         <thead>                     
                             <tr style="border:2px solid #dfdfdf;font-size:15px;">
                                 <th style="border:1px solid #dfdfdf;padding:10px">
@@ -74,17 +74,17 @@
                                 <td style="border:1px solid #dfdfdf;padding:5px;"><?php echo $row['delivery_date'];?></td>
                             </tr>
                             <tr style="border:2px solid #dfdfdf;">
+                                <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Total Fee</b></td>
+                                <td style="border:1px solid #dfdfdf;padding:5px;"><b><?php echo $row['advance_amount']+$row['due_amount'];?></b></td>  
+                            </tr>
+                            <tr style="border:2px solid #dfdfdf;">
                                 <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Advance Fee</b></td>
                                 <td style="border:1px solid #dfdfdf;padding:5px;"><b><?php echo $row['advance_amount'];?></b></td>  
                             </tr>
                             <tr style="border:2px solid #dfdfdf;">
                                 <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Due</b></td>
                                 <td style="border:1px solid #dfdfdf;padding:5px;"><b><?php echo $row['due_amount'];?></b></td>  
-                            </tr>
-                            <tr style="border:2px solid #dfdfdf;">
-                                <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Total Fee</b></td>
-                                <td style="border:1px solid #dfdfdf;padding:5px;"><b><?php echo $row['advance_amount']+$row['due_amount'];?></b></td>  
-                            </tr>
+                            </tr>                            
                         </tbody>
                     </table>
                 </div>
@@ -98,6 +98,19 @@
     </div>
     <form action="" method="POST">
     <div style="text-align:center; padding-top:10px;">
+
+<?php
+if(isset($_GET['src'])){
+    if($_GET['src']=='pending'){ ?>
+      <a style="padding:10px 20px; background:#065CB6;color:#fff;border-radius:5px;margin:0 10px;" href="pending-delivery.php">Back</a>
+ <?php  }elseif($_GET['src']=='success'){ ?>
+ <a  style="padding:10px 20px; background:#065CB6;color:#fff;border-radius:5px;margin:0 10px;" href="success-delivery.php">Back</a>
+<?php }}else{?>
+
+      <a  style="padding:10px 20px; background:#065CB6;color:#fff;border-radius:5px;margin:0 10px;" href="pos-index.php">Back</a>
+
+<?php } ?>  
+
       <button onclick='window.print()' style="padding:10px 20px; background:#065CB6;color:#fff;border-radius:5px;margin:0 10px;">Print</button>
       <button type="submit" name="submit" style="padding:10px 20px; background:#065CB6;color:#fff;border-radius:5px;margin:0 10px;">Send Mail</button>
     </div>

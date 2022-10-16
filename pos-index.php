@@ -10,6 +10,7 @@ if (isset($_GET['id'])) {
     $product = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM product WHERE warranty_id = $id"));
     $orders = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM orders WHERE warranty_id = $id"));
 
+
     $brand = mysqli_query($conn, "SELECT * FROM brand");
 
     if (isset($_POST['submit'])) {
@@ -55,110 +56,74 @@ if (isset($_GET['id'])) {
 
         <!-- Page Content -->
         <section class="content_wrapper">
-            <h4 class="text-xl font-medium">Warranty POS</h4>
-            <br>
+            <!-- <h4 class="text-xl font-medium">Warranty POS</h4><br> -->
             <div class="w-full">
                 <form action="" method="POST">
-                    <div class="warranty_content ">
+                    <div class="warranty_content">
                         <!--  User field -->
-                        <div style="margin-right:30px;" class="add_page_main_content responsive">
-                            <div>
+                        <div style="margin-right:30px;" class="add_page_main_content">
+                            <div class="py-5">
                                 <label>Full Name</label>
-                                <input type="text" name="name" placeholder="Full name" class="input" value="<?php echo $customer['name'] ?>" />
+                                <input required type="text" name="name" placeholder="Full name" class="input required" value="<?php echo $orders['name'] ?>" />
                             </div>
-                            <div>
+                            <div class="py-5">
                                 <label>Phone</label>
-                                <input type="text" name="phone" placeholder="Phone" class="input" value="<?php echo $customer['phone'] ?>" />
+                                <input required type="text" name="phone" placeholder="Phone" class="input required" value="<?php echo $orders['phone'] ?>" />
                             </div>
-                            <div>
+                            <div class="py-5">
                                 <label>Email</label>
-                                <input type="text" name="email" placeholder="Email" class="input" value="<?php echo $customer['email'] ?>" />
+                                <input type="text" name="email" placeholder="Email" class="input required" value="<?php echo $orders['email'] ?>" />
                             </div>
-                            <div>
+                            <div class="py-5">
                                 <label>City</label>
-                                <input type="text" name="city" placeholder="City" class="input" value="<?php echo $customer['city'] ?>" />
+                                <input type="text" name="city" placeholder="City" class="input required" value="<?php echo $customer['city'] ?>" />
                             </div>
-                            <div>
+                            <div class="py-5">
                                 <label>Address</label>
-                                <input type="text" name="address" placeholder="Address" class="input" value="<?php echo $customer['address'] ?>" />
+                                <input required type="text" name="address" placeholder="Address" class="input required" value="<?php echo $customer['address'] ?>" />
                             </div>
                         </div>
                         <!-- =======================part==================== -->
                         <div class="add_page_main_content">
                             <div>
-                                <div>
+                                <div class="py-5">
                                     <label>Product Name</label>
-                                    <input type="text" name="product_name" placeholder="Produc Name" class="input" value="<?php echo $product['product_name'] ?>" />
+                                    <input required type="text" name="product_name" placeholder="Produc Name" class="input required" value="<?php echo $orders['product_name'] ?>" />
+                                </div>
+                                <div class="py-5">
+                                    <label>Brand</label>
+
+                                    <div style="display: flex;">
+                                        <select class="input" name="brand" id="">
+                                            <option selected><?php echo $orders['brand'] ?></option>
+                                            <?php while ($row = mysqli_fetch_assoc($brand)) { ?>
+                                                <option value="<?php echo $row['name'] ?>">
+                                                    <?php echo $row['name'] ?></option>
+                                            <?php } ?>
+                                        </select>
+
+                                        <button type="button" style="width:40px; height:40px;" class="brand_category_plus add_brand_btn">+</button>
+                                    </div>
+
                                 </div>
 
-                                <div class="brand_categroy">
-                                    <div class="brand_categroy_content">
+                                <div style="position: relative;" class="py-5">
+                                    <label>Category</label>
 
-                                        <div class="brand_categroy_width">
-                                            <label>Brand</label>
-                                            <div class="brand_category_style">
-                                                <div>
-                                                    <select class="input" name="brand" id="">
-                                                        <option style="display:none;" selected disabled>Selcect Brand Name
-                                                            &nbsp;&nbsp;&nbsp;&nbsp;</option>
-                                                        <?php while ($row = mysqli_fetch_assoc($brand)) { ?>
-                                                            <option selected value="<?php echo $product['brand'] ?>">
-                                                                <?php echo $product['brand'] ?></option>
-                                                            <option value="<?php echo $row['name'] ?>">
-                                                                <?php echo $row['name'] ?></option>
-                                                        <?php } ?>
-                                                    </select>
-                                                </div>
-                                                <div class="brand_category_plus">+</div>
-                                            </div>
-                                        </div>
+                                    <div style="display: flex;">
+                                        <input required id="parent_cat" name="category" placeholder="Select Category" type="search" class="input" value="<?php echo $orders['category'] ?>">
+                                        <button type="button" class="brand_category_plus add_category_btn">+</button>
+                                    </div>
 
-                                        <!-- <div class="brand_categroy_width">
-                                        <label>Category</label>
-                                        <div class="brand_category_style">
-                                            <div>
-                                                <input type="text" name="category" placeholder="Category"
-                                                    class="input" />
-                                            </div>
-                                            <div class="brand_category_plus">+</div>
-                                        </div>
-                                    </div> -->
-
-                                        <div class="brand_categroy_width" style="position: relative;">
-                                            <label for="parent_cat">Parent Category</label>
-                                            <input required id="parent_cat" placeholder="Select Category" type="search" value="<?php echo $orders['category'] ?>" class="input mt-2">
-                                            <input name="parent_category" type="hidden" id="category-hidden-id">
-
-                                            <div class="relative categories_ul_ref_parent" style="display: none;position: absolute;max-width: 250px;background: white;z-index: 999 !important; overflow:auto;">
-                                                <ul class="categories_ul_ref ring-2 mt-2 ring-gray-100 rounded"></ul>
-                                                <button type="button" class="hide_categories_ul_ref_parent absolute right-2 top-2 text-xs px-2 py-1 bg-gray-100 hover:bg-gray-200 rounded">hide</button>
-                                            </div>
-
-                                        </div>
-
-
-
-
+                                    <div class="relative categories_ul_ref_parent" style="display: none;position: absolute;width:100%; overflow:hidden; max-width: 100%;background: white;z-index: 999 !important; overflow:auto;">
+                                        <ul class="categories_ul_ref ring-2 mt-2 ring-gray-100 rounded"></ul>
+                                        <button type="button" class="hide_categories_ul_ref_parent absolute right-2 top-2 text-xs px-2 py-1 bg-gray-100 hover:bg-gray-200 rounded">hide</button>
                                     </div>
                                 </div>
-
-                                <div class="pos_input_item">
-                                    <div class="brand_categroy_content">
-                                        <div class="brand_categroy_width">
-                                            <label>Received Date</label>
-                                            <input type="date" name="receive_date" placeholder="Receive Date" class="input" value="<?php echo $product['receive_date'] ?>" />
-                                        </div>
-                                        <span class="brand_categroy_width">
-                                            <label>Delivery Date</label>
-                                            <input type="date" name="delivery_date" placeholder="Delivery Date" class="input" value="<?php echo $product['delivery_date'] ?>" />
-                                        </span>
-                                    </div>
-                                </div>
-
 
                                 <div class="note">
-                                    <label>Note:</label>
-                                    <textarea class="note_textarea" name="note" id="" rows="4" placeholder="Write something about this product."><?php echo $product['note'] ?></textarea>
+                                    <label>Problem:</label>
+                                    <textarea class="note_textarea" name="note" id="" rows="5"><?php echo $product['note']; ?></textarea>
                                 </div>
 
 
@@ -175,41 +140,52 @@ if (isset($_GET['id'])) {
 
                                     <div class="pos_input_item">
                                         <div class="brand_categroy_content">
-                                            <span class="brand_categroy_width">
-                                                <b>Warranty Fee</b>
-                                                <input name="warranty_fee" type="number" placeholder="Warranty Fee" class="input" value="<?php echo $orders['warranty_fee'] ?>">
-                                            </span>
-                                            <span class="brand_categroy_width">
-                                                <b>Delivery Fee</b>
-                                                <input name="delivery_fee" type="number" placeholder="Delivery Fee" class="input" value="<?php echo $orders['delivery_fee'] ?>">
+                                            <div class="brand_categroy_width">
+                                                <b>Receive Date</b>
+                                                <input required name="receive_date" type="date" class="input" value="<?php echo $orders['receive_date'] ?>">
+                                            </div>
+                                            <div class="brand_categroy_width">
+                                                <b>Delivery Date</b>
+                                                <input required name="delivery_date" type="date" class="input" value="<?php echo $orders['delivery_date'] ?>">
+                                            </div>
                                         </div>
-                                        </span>
-
                                     </div>
+
                                     <div class="pos_input_item">
                                         <div class="brand_categroy_content">
-                                            <span class="brand_categroy_width">
-                                                <b>Advanced Amount</b>
-                                                <input name="advanced_amount" type="number" placeholder="Advanced Amount" class="input" value="<?php echo $orders['advance_amount'] ?>">
-                                            </span>
-                                            <span class="brand_categroy_width">
-                                                <b>Due Amount</b>
-                                                <input name="due_amount" type="number" placeholder="Due Amount" class="input" value="<?php echo $orders['due_amount'] ?>">
+                                            <div class="brand_categroy_width">
+                                                <b>Warranty Fee</b>
+                                                <input name="warranty_fee" type="number" placeholder="Warranty Fee" class="input warranty_fee" value="<?php echo $orders['warranty_fee'] ?>">
+                                            </div>
+                                            <div class="brand_categroy_width">
+                                                <b>Delivery Fee</b>
+                                                <input name="delivery_fee" type="number" placeholder="Delivery Fee" class="input delivery_fee" value="<?php echo $orders['delivery_fee'] ?>">
+                                            </div>
                                         </div>
-                                        </span>
+                                    </div>
+
+
+                                    <div class="pos_input_item">
+                                        <div class="brand_categroy_content">
+                                            <div class="brand_categroy_width">
+                                                <b>Advanced Amount</b>
+                                                <input required name="advanced_amount" type="number" placeholder="Advanced Amount" class="input advance_amount" value="<?php echo $orders['advance_amount'] ?>">
+                                            </div>
+                                            <div class="brand_categroy_width">
+                                                <b>Due Amount</b>
+                                                <input name="due_amount" type="number" placeholder="Due Amount" class="input due_amount" value="<?php echo $orders['due_amount'] ?>">
+                                            </div>
+                                        </div>
 
                                     </div>
 
                                     <b>Status</b>
-                                    <select required name="status" class="input">
-                                        <?php if ($orders['status'] != '') { ?>
+                                    <select name="status" class="input required">
                                             <?php echo "<option selected>" . $orders['status'] . "</option>" ?>
-                                        <?php  } ?>
-                                        <option value="receive">Receive</option>
-                                        <option value="courier">Qourier</option>
-                                        <option value="delivery">Delivery</option>
-                                        <option value="success">Success</option>
-                                        <?php  ?>
+                                            <option value="receive">Receive</option>
+                                            <option value="courier">Courier</option>
+                                            <option value="delivery">Delivery</option>
+                                            <option value="success">Success</option>
                                     </select>
 
                                     <input class="add_brand_btn btn bg-blue-500 active:bg-blue-700 hover:bg-blue-600 text-white p-2 rounded" type="submit" name="submit" value="Update Warranty">
@@ -219,18 +195,84 @@ if (isset($_GET['id'])) {
                     </div>
                 </form>
             </div>
+<!-- ============================end -->
+
+            <!-- -------------add brand---------------- -->
+            <?php
+            if (isset($_POST['add_brand'])) {
+                $add_brand = $_POST['add_brand_name'];
+
+                $insert_brand = mysqli_query($conn, "INSERT INTO brand(name) VALUE('$add_brand')");
+                if ($insert_brand) {
+                    $msg = "Successfully created a new Brand";
+                    header("location:pos-index.php?msg=$msg");
+                }
+            }
+            ?>
+
+            <form action="" method="POST">
+                <div class="add_category_wrapper add_brand" style="display: none;">
+                    <div class="hide_add_new_cat fixed inset-0 w-full h-screen bg-black bg-opacity-50 z-40"></div>
+                    <div class="fixed w-[96%] md:w-[500px] inset-0 m-auto bg-white rounded shadow z-50 h-fit">
+                        <h1 class="p-4 border-b">
+                            Add Brand
+                        </h1>
+
+                        <div class="p-4 space-y-2">
+                            <label for="cat_name">Brand Name</label>
+                            <input required name="add_brand_name" type="text" class="input">
+
+                        </div>
+
+                        <div class="p-4 flex items-center justify-end gap-x-3 border-t mt-4">
+                            <button class="btn w-fit p-2 bg-blue-600 text-white rounded focus:ring-2" type="submit" name="add_brand">Create Brand</button>
+                            <button class="btn w-fit p-2 bg-red-400 text-white rounded focus:ring-2 hide_add_new_cat">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+
+            <!-- -------------add category---------------- -->
+            <form action="" method="POST">
+                <div class="add_category_wrapper add_category" style="display: none; z-index:999; position:relative;">
+                    <div class="hide_add_new_cat fixed inset-0 w-full h-screen bg-black bg-opacity-50 z-40"></div>
+                    <div class="fixed w-[96%] md:w-[500px] inset-0 m-auto bg-white rounded shadow z-50 h-fit">
+                        <h1 class="p-4 border-b">
+                            Add New Category
+                        </h1>
+                        <div class="p-4 relative">
+                            <label for="parent_cat">Parent Category</label>
+                            <input required id="parent_cat" placeholder="Select Category" type="search" class="input required mt-2">
+                            <input name="parent_category" type="hidden" id="category-hidden-id">
+
+                            <div class="relative categories_ul_ref_parent" style="display: none;">
+                                <ul class="categories_ul_ref ring-2 mt-2 ring-gray-100 rounded"></ul>
+                                <button class="hide_categories_ul_ref_parent absolute right-2 top-2 text-xs px-2 py-1 bg-gray-100 hover:bg-gray-200 rounded">hide</button>
+                            </div>
+                        </div>
+
+                        <div class="p-4 space-y-2">
+                            <label for="cat_name">Category Name</label>
+                            <input required name="category" id="cat_name" placeholder="Select Category" type="text" class="input">
+                        </div>
+
+                        <div class="p-4 flex items-center justify-end gap-x-3 border-t mt-4">
+                            <button class="btn w-fit p-2 bg-blue-600 text-white rounded focus:ring-2" type="submit" name="add_category">Create</button>
+                            <button type="button" class="btn w-fit p-2 bg-red-400 rounded focus:ring-2 hide_add_new_cat">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
 
             </div>
         </section>
     </main>
 
-
-
-
-
-
-
+    <!-- ============================= -->
     <!-- =============Break================ -->
+    <!-- ============================= -->
 <?php } else {
     $brand = mysqli_query($conn, "SELECT * FROM brand");
 
@@ -280,42 +322,41 @@ if (isset($_GET['id'])) {
 
         <!-- Page Content -->
         <section class="content_wrapper">
-            <h4 class="text-xl font-medium">Warranty POS</h4>
-            <br>
+            <!-- <h4 class="text-xl font-medium">Warranty POS</h4><br> -->
             <div class="w-full">
                 <form action="" method="POST">
                     <div class="warranty_content">
                         <!--  User field -->
                         <div style="margin-right:30px;" class="add_page_main_content">
-                            <div>
+                            <div class="py-5">
                                 <label>Full Name</label>
-                                <input type="text" name="name" placeholder="Full name" class="input" />
+                                <input required type="text" name="name" placeholder="Full name" class="input required" />
                             </div>
-                            <div>
+                            <div class="py-5">
                                 <label>Phone</label>
-                                <input type="text" name="phone" placeholder="Phone" class="input" />
+                                <input required type="text" name="phone" placeholder="Phone" class="input required" />
                             </div>
-                            <div>
+                            <div class="py-5">
                                 <label>Email</label>
-                                <input type="text" name="email" placeholder="Email" class="input" />
+                                <input type="text" name="email" placeholder="Email" class="input required" />
                             </div>
-                            <div>
+                            <div class="py-5">
                                 <label>City</label>
-                                <input type="text" name="city" placeholder="City" class="input" />
+                                <input type="text" name="city" placeholder="City" class="input required" />
                             </div>
-                            <div>
+                            <div class="py-5">
                                 <label>Address</label>
-                                <input type="text" name="address" placeholder="Address" class="input" />
+                                <input required type="text" name="address" placeholder="Address" class="input required" />
                             </div>
                         </div>
                         <!-- =======================part==================== -->
                         <div class="add_page_main_content">
                             <div>
-                                <div>
+                                <div class="py-5">
                                     <label>Product Name</label>
-                                    <input type="text" name="product_name" placeholder="Produc Name" class="input" />
+                                    <input required type="text" name="product_name" placeholder="Produc Name" class="input required" />
                                 </div>
-                                <div>
+                                <div class="py-5">
                                     <label>Brand</label>
 
                                     <div style="display: flex;">
@@ -332,7 +373,7 @@ if (isset($_GET['id'])) {
 
                                 </div>
 
-                                <div style="position: relative;">
+                                <div style="position: relative;" class="py-5">
                                     <label>Category</label>
 
                                     <div style="display: flex;">
@@ -346,9 +387,9 @@ if (isset($_GET['id'])) {
                                     </div>
                                 </div>
 
-                                <div class="note">
+                                <div class="note" class="py-5">
                                     <label>Problem:</label>
-                                    <textarea class="note_textarea" name="note" id="" rows="4" placeholder="Write something about this product."></textarea>
+                                    <textarea class="note_textarea" name="note" id="" rows="5" placeholder="Write something about this product."></textarea>
                                 </div>
 
 
@@ -367,24 +408,24 @@ if (isset($_GET['id'])) {
                                         <div class="brand_categroy_content">
                                             <div class="brand_categroy_width">
                                                 <b>Receive Date</b>
-                                                <input name="receive_date" type="date" class="input">
+                                                <input required name="receive_date" type="date" class="input">
                                             </div>
                                             <div class="brand_categroy_width">
                                                 <b>Delivery Date</b>
-                                                <input name="delivery_date" type="date" class="input">
+                                                <input required name="delivery_date" type="date" class="input">
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="pos_input_item">
+                                    <div class="pos_input required_item">
                                         <div class="brand_categroy_content">
                                             <div class="brand_categroy_width">
                                                 <b>Warranty Fee</b>
-                                                <input name="warranty_fee" type="number" placeholder="Warranty Fee" class="input">
+                                                <input name="warranty_fee" type="number" placeholder="Warranty Fee" class="input warranty_fee">
                                             </div>
                                             <div class="brand_categroy_width">
                                                 <b>Delivery Fee</b>
-                                                <input name="delivery_fee" type="number" placeholder="Delivery Fee" class="input">
+                                                <input name="delivery_fee" type="number" placeholder="Delivery Fee" class="input delivery_fee">
                                             </div>
                                         </div>
                                     </div>
@@ -394,18 +435,18 @@ if (isset($_GET['id'])) {
                                         <div class="brand_categroy_content">
                                             <div class="brand_categroy_width">
                                                 <b>Advanced Amount</b>
-                                                <input name="advanced_amount" type="number" placeholder="Advanced Amount" class="input">
+                                                <input required name="advanced_amount" type="number" placeholder="Advanced Amount" class="input advance_amount">
                                             </div>
                                             <div class="brand_categroy_width">
                                                 <b>Due Amount</b>
-                                                <input name="due_amount" type="number" placeholder="Due Amount" class="input">
+                                                <input name="due_amount" type="number" placeholder="Due Amount" class="input due_amount">
                                             </div>
                                         </div>
 
                                     </div>
 
                                     <b>Status</b>
-                                    <select required name="status" class="input">
+                                    <select name="status" class="input">
                                         <?php if ($orders['status'] != '') { ?>
                                             <?php echo "<option selected disabled>" . $orders['status'] . "</option>" ?>
                                         <?php  } else { ?>
@@ -423,6 +464,7 @@ if (isset($_GET['id'])) {
                     </div>
                 </form>
             </div>
+
 
             <!-- -------------add brand---------------- -->
             <?php
@@ -447,7 +489,7 @@ if (isset($_GET['id'])) {
 
                         <div class="p-4 space-y-2">
                             <label for="cat_name">Brand Name</label>
-                            <input name="add_brand_name" type="text" class="input">
+                            <input required name="add_brand_name" type="text" class="input">
 
                         </div>
 
@@ -461,6 +503,18 @@ if (isset($_GET['id'])) {
 
 
             <!-- -------------add category---------------- -->
+            <?php
+            if (isset($_POST['add_category'])) {
+                $parent_id = $_POST['parent_id'];
+                $category = $_POST['category'];
+
+                $insert_brand = mysqli_query($conn, "INSERT INTO category(`category`, `parent_id`) VALUE('$category', '$parent_id')");
+                if ($insert_brand) {
+                    $msg = "Successfully created a new Brand";
+                    header("location:pos-index.php?msg=$msg");
+                }
+            }
+            ?>
 
             <form action="" method="POST">
                 <div class="add_category_wrapper add_category" style="display: none; z-index:999; position:relative;">
@@ -471,8 +525,8 @@ if (isset($_GET['id'])) {
                         </h1>
                         <div class="p-4 relative">
                             <label for="parent_cat">Parent Category</label>
-                            <input required id="parent_cat" placeholder="Select Category" type="search" class="input mt-2">
-                            <input name="parent_category" type="hidden" id="category-hidden-id">
+                            <input required id="parent_cat" placeholder="Select Category" type="search" class="input required mt-2">
+                            <input name="parent_id" type="hidden" id="category-hidden-id">
 
                             <div class="relative categories_ul_ref_parent" style="display: none;">
                                 <ul class="categories_ul_ref ring-2 mt-2 ring-gray-100 rounded"></ul>
@@ -482,12 +536,12 @@ if (isset($_GET['id'])) {
 
                         <div class="p-4 space-y-2">
                             <label for="cat_name">Category Name</label>
-                            <input name="category" id="cat_name" placeholder="Select Category" type="text" class="input">
+                            <input required name="category" id="cat_name" placeholder="Select Category" type="text" class="input">
                         </div>
 
                         <div class="p-4 flex items-center justify-end gap-x-3 border-t mt-4">
-                            <button class="btn w-fit p-2 bg-blue-600 text-white rounded focus:ring-2" type="submit" name="submit">Create</button>
-                            <button type="button" class="btn w-fit p-2 bg-red-400 rounded focus:ring-2 hide_add_new_cat">Cancel</button>
+                            <button class="btn w-fit p-2 bg-blue-600 text-white rounded focus:ring-2" type="submit" name="add_category">Create</button>
+                            <button style="background:#F87171;color:#fff;" type="button" class="btn w-fit p-2 bg-red-400 rounded focus:ring-2 hide_add_new_cat">Cancel</button>
                         </div>
                     </div>
                 </div>
@@ -497,6 +551,8 @@ if (isset($_GET['id'])) {
             </div>
         </section>
     </main>
+<?php } ?>
+
 
     <script>
         let add_brand_btn = document.querySelector(".add_brand_btn");
@@ -512,9 +568,48 @@ if (isset($_GET['id'])) {
         add_category_btn.addEventListener("click", () => {
             add_category.style.display = "block";
         });
+
+        //advance and due 
+        let warranty_fee_input = document.querySelector(".warranty_fee");
+        let delivery_fee_input = document.querySelector(".delivery_fee");
+        let advance_amount_input = document.querySelector(".advance_amount");
+        let due_amount_input = document.querySelector(".due_amount");
+
+        let warranty_fee = 0;
+        let delivery_fee = 0;
+        let advance_amount = 0;
+
+        warranty_fee_input.addEventListener('keyup', function() {
+            warranty_fee = this.value
+            calculate()
+            calculate_due()
+        })
+
+        delivery_fee_input.addEventListener('keyup', function() {
+            delivery_fee = this.value
+            calculate()
+            calculate_due()
+        })
+
+        advance_amount_input.addEventListener('keyup', function() {
+            advance_amount = this.value
+            calculate_due()
+        })
+
+        function calculate_due() {
+            due_amount_input.value = (Number(warranty_fee) + Number(delivery_fee)) - Number(advance_amount_input.value)
+        }
+
+        function calculate() {
+            if (warranty_fee ||
+                delivery_fee) {
+                advance_amount_input.value = (Number(warranty_fee) + Number(delivery_fee))
+            } else {
+                advance_amount_input.value = 0
+            }
+        }
     </script>
 
-<?php } ?>
 
 
 <?php include("common/footer.php"); ?>
@@ -522,3 +617,6 @@ if (isset($_GET['id'])) {
 <?php if (isset($_GET['msg'])) { ?><script>
         swal("Good job!", "<?php echo $_GET['msg']; ?>", "success");
     </script><?php } ?>
+
+
+<!-- <div id="munna" data-text="amar name developer munna"></div> -->
