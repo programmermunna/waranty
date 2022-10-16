@@ -30,13 +30,14 @@ if(isset($_POST['submit'])){
   setcookie('admin_id', $id , time()+86000);
    header('location:pos-index.php');
   }else{
-     $msg = "Somethings error! Please try again.";
-
+     $msg = "Your Email or password is wrong!";
+     header("location:login.php?msg=$msg");
   }
   }else{
-    $msg = "Somethings error! Please try again.";
+    $msg = "Your Email is not validate!";
+    header("location:login.php?msg=$msg");
   }
-   }
+}
 
 
 ?>
@@ -56,7 +57,7 @@ if(isset($_POST['submit'])){
       <div
         class="text-left w-fit h-fit bg-white shadow-lg rounded overflow-hidden"
       >
-      <?php if(isset($msg)){ ?><div class="alert_success"><?php echo $msg; ?></div><?php }?></h1>
+      <!-- <?php if(isset($msg)){ ?><div class="alert_success"><?php echo $msg; ?></div><?php }?></h1> -->
         <div
           style="
             background-image: url('https://i.postimg.cc/XJ7NvTb6/istockphoto-1221025677-170667a.jpg');
@@ -75,9 +76,7 @@ if(isset($_POST['submit'])){
                 id="email"
                 class="w-full px-4 py-2 mt-2 border rounded focus:outline-none focus:ring-1 focus:ring-blue-600"
               />
-              <span class="text-xs tracking-wide text-red-600"
-                >Email field is required
-              </span>
+              <span class="text-xs tracking-wide text-red-600"></span>
             </div>
 
             <div>
@@ -107,3 +106,34 @@ if(isset($_POST['submit'])){
     </div>
   </body>
 </html>
+<?php if (isset($_GET['msg'])) { ?><div id="munna" data-text="<?php echo $_GET['msg']; ?>"></div><?php } ?>
+
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+
+const munna = document.getElementById("munna");
+if (munna) {
+
+  munna.innerHTML = `
+<div id="munna" style="position: fixed; top: 100px; right: 20px; z-index:999; background:#31B0D5; color:white; display:flex; padding:12px; align-items:center; gap:6px; border-radius: 5px; line-height: 0px; ">
+<span style="font-size:18px;"> 
+<i class="fa-sharp fa-solid fa-circle-info"></i>
+</span>
+<h6 style="background:black;color:white;">
+${munna?.dataset?.text} </div>
+</h6> `
+
+  setTimeout(() => {
+    munna.innerHTML = ''
+  }, munna?.dataset?.time || 2000)
+
+}})
+</script>
+
+
+
+<style>
+  #munna{
+    padding:30px !important;
+  }
+</style>

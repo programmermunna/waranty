@@ -4,18 +4,20 @@
 <?php
 
 if (isset($_POST['add_brand'])) {
-    $add_brand = $_POST['add_brand_name'];
+    $brand_name = $_POST['brand_name'];
 
-    $insert_brand = mysqli_query($conn, "INSERT INTO brand(name) VALUE('$add_brand')");
+    $insert_brand = mysqli_query($conn, "INSERT INTO brand(name) VALUE('$brand_name')");
     if ($insert_brand) {
         $msg = "Successfully created a new Brand";
         header("location:brand.php?msg=$msg");
+    }else{
+        echo "something";
     }
 }
 
 if (isset($_POST['update'])) {
-    echo $id = $_POST['brand_id'];
-    echo $up_brand = $_POST['up_brand']; 
+     $id = $_POST['brand_id'];
+     $up_brand = $_POST['up_brand']; 
 
     $update_brand = mysqli_query($conn, "UPDATE brand SET name='$up_brand' WHERE id=$id");
     if ($update_brand) {
@@ -45,8 +47,7 @@ if (isset($_POST['update'])) {
                 <div class="table_content_wrapper">
                     <header class="table_header">
                         <div class="table_header_left">
-                            <button class="add_brand_btn show_add_new_cat px-4 py-2 text-sm bg-blue-600 text-white rounded focus:ring">Add New
-                                Brand</button>
+                            <button class="add_brand_btn px-4 py-2 text-sm bg-blue-600 text-white rounded focus:ring">Add New Brand</button>
                         </div>
 
                         <form action="" method="POST">
@@ -216,7 +217,7 @@ if (isset($_POST['update'])) {
 
                         <div class="p-4 space-y-2">
                             <label for="cat_name">Brand Name</label>
-                            <input name="add_brand_name" type="text" class="input">
+                            <input name="brand_name" type="text" class="input">
 
                         </div>
 
@@ -287,4 +288,11 @@ if (isset($_POST['update'])) {
 <!-- Side Navbar Links -->
 <?php include("common/footer.php"); ?>
 <!-- Side Navbar Links -->
-<?php if (isset($_GET['msg'])) { ?><script>swal("Good job!", "<?php echo $_GET['msg']; ?>", "success");</script><?php } ?>
+<!-- <?php if (isset($_GET['msg'])) { ?><script>swal("Good job!", "<?php echo $_GET['msg']; ?>", "success");</script><?php } ?> -->
+
+
+
+<?php if (isset($_GET['msg'])) { ?><div id="munna" data-text="<?php echo $_GET['msg']; ?>"></div><?php } ?>
+
+
+
