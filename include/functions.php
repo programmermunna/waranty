@@ -26,7 +26,8 @@ if(!session_start()){
         $mail->addAddress($addres);     // Add a recipient
         $mail->addReplyTo($site_email, 'Noreplay');
 
-        //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+        // $mail->addAttachment('../upload/signature.png', 'signature.png');    // Optional name
+        $mail->addEmbeddedImage('../upload/signature.png', 'signature.png');    // Optional name
         $mail->isHTML(true);                                  // Set email format to HTML
 
         $mail->Subject = $subject;

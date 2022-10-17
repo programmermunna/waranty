@@ -5,9 +5,7 @@
   if(isset($_GET['id'])){
    $id = $_GET['id'];
    $option = $_GET['option'];
-  }
-
- 
+  } 
   
   $customer = mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM customer WHERE warranty_id='$id'")); 
   $orders = mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM orders WHERE warranty_id='$id'"));
@@ -16,22 +14,34 @@ if($option=='receive'){
 ob_start(); ?>
 <main style="color:#000 !important;">
   <section style="background:#fff;">
-   <div style="border:2px solid #dfdfdf;">
-    <div>      
-        <h2 style="background:#065CB6;color:#fff;padding:4% 2%;margin:0px;"><?php echo $invoice['name'];?></h2>
-      <div style="padding:2%">
-            <div>
-                <p ><b>Date:</b> <?php $time = time();echo date('d-m-y',$time);?></p>
-                <p ><b>Status:</b> <span ><?php echo $option;?></span></p>
+   <div>
+    <div style="padding:2%">      
+        <div >
+            <div style="width:100%;display:inline-block;">
+                <div style="float:left;">
+                    <h2 style="color:#065CB6;padding:5px 0;font-size:30px;font-weight:700;margin:0px;"><?php echo $invoice['name'];?></h2>
+                    <p><?php echo $invoice['address'];?></p>
+                    <p><?php echo $invoice['email'];?></p>
+                </div>
+                <div style="float:right;padding-top:35px;text-align:right">
+                    <p><b>Phone: </b> <?php echo $invoice['phone'];?></p>
+                    <p style="margin:0;"><b>What's app: </b><?php echo $invoice['whatsapp'];?></p>
+                </div>                
+            </div>
+            <div> <hr></div>
+
+            <div style="padding-top:20px;">
+                <p><b>Date:</b> <?php $time = time();echo date('d-m-y',$time);?></p>
+                <p><b>Status:</b> <span ><?php echo $option;?></span></p>
             </div>
 
-            <div style="overflow:auto;">
-                <div style="color:#065CB6;padding:20px 0;font-size:25px;font-weight:700">Billing address</div>
+            <div>
+                <div style="color:#065CB6;padding:20px 0;font-size:22px;font-weight:700">Invoice Bill</div>
                 <div style="border:2px solid #E5E5E5;padding:3px 10px;">
-                    <p><?php echo $customer['name'];?></p>
-                    <p><?php echo $customer['email'];?></p>
-                    <p><?php echo $customer['phone'];?></p>
-                    <p><?php echo $customer['address'];?></p>
+                    <p><b>Name: </b> <?php echo $customer['name'];?></p>
+                    <p><b>Email: </b> <?php echo $customer['email'];?></p>
+                    <p><b>Phone: </b> <?php echo $customer['phone'];?></p>
+                    <p><b>Address: </b> <?php echo $customer['address'];?></p>
                 </div>
             </div>
             
@@ -82,27 +92,31 @@ ob_start(); ?>
                 </div>
             </div>
 
-            <div style="font-size:80%;overflow:auto">
-             <div style="float:left">
-                <div>Congratulations on the sale.</div>
-                <div>Copyright&copy; <?php echo $invoice['website'];?></div>
-             </div>
-             <div style="float:right;">
-                <div><?php echo $invoice['phone'];?></div>
-                <div><?php echo $invoice['email'];?></div>
-                <div><?php echo $invoice['address'];?></div>
+        <div style="width:100%;display:inline-block;">
+            <div style="float:left">
+                <!-- <div style="margin-bottom:20px 0;"><img style="width:200px;height:70px" src="upload/<?php //echo $invoice['signature'];?>" alt=""></span></div> -->
+                <div style="margin-bottom:20px 0;">&nbsp;<img style="width:200px;height:70px" id="sign" src="cid:signature.png" alt="signature"></span></div>
+                <div style="margin-bottom:20px 0">Signature</div>
             </div>
+            <div style="float:right;">
+                <div style="margin-bottom:0px">Congratulations on the warranty.</div>
+                <div style="margin-bottom:27px">Copyright&copy; <?php echo $invoice['website'];?> </div>
             </div>
+        </div>
 
+        
       </div>
     </div>
   </section>
 </main>
+
     <?php $my_var = ob_get_clean();
 
     $query = mysqli_query($conn,"UPDATE orders SET status='$option' WHERE warranty_id='$id'");
     
     $my_var;
+    $imag =
+
     $customer_email = mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM orders WHERE warranty_id=$id"));
     $email =  $customer_email['email'];
 
@@ -124,26 +138,38 @@ ob_start(); ?>
         $msg = 'Your Mail was sent successfully.';
         header("location:pending-delivery.php?msg=$msg");
     }
-}elseif($option=='courier'){
+}elseif($option=='couriar'){
     ob_start(); ?>
     <main style="color:#000 !important;">
       <section style="background:#fff;">
-       <div style="border:2px solid #dfdfdf;">
-        <div>      
-            <h2 style="background:#065CB6;color:#fff;padding:4% 2%;margin:0px;"><?php echo $invoice['name'];?></h2>
-          <div style="padding:2%">
-                <div>
-                    <p ><b>Date:</b> <?php $time = time();echo date('d-m-y',$time);?></p>
-                    <p ><b>Status:</b> <span ><?php echo $option;?></span></p>
+       <div>
+        <div style="padding:2%">      
+            <div >
+                <div style="width:100%;display:inline-block;">
+                    <div style="float:left;">
+                        <h2 style="color:#065CB6;padding:5px 0;font-size:30px;font-weight:700;margin:0px;"><?php echo $invoice['name'];?></h2>
+                        <p><?php echo $invoice['address'];?></p>
+                        <p><?php echo $invoice['email'];?></p>
+                    </div>
+                    <div style="float:right;padding-top:35px;text-align:right">
+                        <p><b>Phone: </b> <?php echo $invoice['phone'];?></p>
+                        <p style="margin:0;"><b>What's app: </b><?php echo $invoice['whatsapp'];?></p>
+                    </div>                
+                </div>
+                <div> <hr></div>
+    
+                <div style="padding-top:20px;">
+                    <p><b>Date:</b> <?php $time = time();echo date('d-m-y',$time);?></p>
+                    <p><b>Status:</b> <span ><?php echo $option;?></span></p>
                 </div>
     
-                <div style="overflow:auto;">
-                    <div style="color:#065CB6;padding:20px 0;font-size:25px;font-weight:700">Billing address</div>
+                <div>
+                    <div style="color:#065CB6;padding:20px 0;font-size:22px;font-weight:700">Invoice Bill</div>
                     <div style="border:2px solid #E5E5E5;padding:3px 10px;">
-                        <p><?php echo $customer['name'];?></p>
-                        <p><?php echo $customer['email'];?></p>
-                        <p><?php echo $customer['phone'];?></p>
-                        <p><?php echo $customer['address'];?></p>
+                        <p><b>Name: </b> <?php echo $customer['name'];?></p>
+                        <p><b>Email: </b> <?php echo $customer['email'];?></p>
+                        <p><b>Phone: </b> <?php echo $customer['phone'];?></p>
+                        <p><b>Address: </b> <?php echo $customer['address'];?></p>
                     </div>
                 </div>
                 
@@ -194,27 +220,31 @@ ob_start(); ?>
                     </div>
                 </div>
     
-                <div style="font-size:80%;overflow:auto">
-                 <div style="float:left">
-                    <div>Congratulations on the sale.</div>
-                    <div>Copyright&copy; <?php echo $invoice['website'];?></div>
-                 </div>
-                 <div style="float:right;">
-                    <div><?php echo $invoice['phone'];?></div>
-                    <div><?php echo $invoice['email'];?></div>
-                    <div><?php echo $invoice['address'];?></div>
+            <div style="width:100%;display:inline-block;">
+                <div style="float:left">
+                    <!-- <div style="margin-bottom:20px 0;"><img style="width:200px;height:70px" src="upload/<?php //echo $invoice['signature'];?>" alt=""></span></div> -->
+                    <div style="margin-bottom:20px 0;">&nbsp;<img style="width:200px;height:70px" id="sign" src="cid:signature.png" alt="signature"></span></div>
+                    <div style="margin-bottom:20px 0">Signature</div>
+                </div>
+                <div style="float:right;">
+                    <div style="margin-bottom:0px">Congratulations on the warranty.</div>
+                    <div style="margin-bottom:27px">Copyright&copy; <?php echo $invoice['website'];?> </div>
                 </div>
             </div>
     
+            
           </div>
         </div>
       </section>
     </main>
+    
         <?php $my_var = ob_get_clean();
     
         $query = mysqli_query($conn,"UPDATE orders SET status='$option' WHERE warranty_id='$id'");
-    
+        
         $my_var;
+        $imag =
+    
         $customer_email = mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM orders WHERE warranty_id=$id"));
         $email =  $customer_email['email'];
     
@@ -229,7 +259,7 @@ ob_start(); ?>
         $site_name = $mail['site_replay_email'];
         $address = $email;
         $body = $my_var;
-        $subject = 'Your product has been sent at courier';
+        $subject = 'Your Order Has been Received';
         $send = sendVarifyCode($smtp_host,$smtp_username,$smtp_password,$smtp_port,$smtp_secure,$site_email,$site_name,$address,$body,$subject);
     
         if(!$send){
@@ -240,22 +270,34 @@ ob_start(); ?>
         ob_start(); ?>
         <main style="color:#000 !important;">
           <section style="background:#fff;">
-           <div style="border:2px solid #dfdfdf;">
-            <div>      
-                <h2 style="background:#065CB6;color:#fff;padding:4% 2%;margin:0px;"><?php echo $invoice['name'];?></h2>
-              <div style="padding:2%">
-                    <div>
-                        <p ><b>Date:</b> <?php $time = time();echo date('d-m-y',$time);?></p>
-                        <p ><b>Status:</b> <span ><?php echo $option;?></span></p>
+           <div>
+            <div style="padding:2%">      
+                <div >
+                    <div style="width:100%;display:inline-block;">
+                        <div style="float:left;">
+                            <h2 style="color:#065CB6;padding:5px 0;font-size:30px;font-weight:700;margin:0px;"><?php echo $invoice['name'];?></h2>
+                            <p><?php echo $invoice['address'];?></p>
+                            <p><?php echo $invoice['email'];?></p>
+                        </div>
+                        <div style="float:right;padding-top:35px;text-align:right">
+                            <p><b>Phone: </b> <?php echo $invoice['phone'];?></p>
+                            <p style="margin:0;"><b>What's app: </b><?php echo $invoice['whatsapp'];?></p>
+                        </div>                
+                    </div>
+                    <div> <hr></div>
+        
+                    <div style="padding-top:20px;">
+                        <p><b>Date:</b> <?php $time = time();echo date('d-m-y',$time);?></p>
+                        <p><b>Status:</b> <span ><?php echo $option;?></span></p>
                     </div>
         
-                    <div style="overflow:auto;">
-                        <div style="color:#065CB6;padding:20px 0;font-size:25px;font-weight:700">Billing address</div>
+                    <div>
+                        <div style="color:#065CB6;padding:20px 0;font-size:22px;font-weight:700">Invoice Bill</div>
                         <div style="border:2px solid #E5E5E5;padding:3px 10px;">
-                            <p><?php echo $customer['name'];?></p>
-                            <p><?php echo $customer['email'];?></p>
-                            <p><?php echo $customer['phone'];?></p>
-                            <p><?php echo $customer['address'];?></p>
+                            <p><b>Name: </b> <?php echo $customer['name'];?></p>
+                            <p><b>Email: </b> <?php echo $customer['email'];?></p>
+                            <p><b>Phone: </b> <?php echo $customer['phone'];?></p>
+                            <p><b>Address: </b> <?php echo $customer['address'];?></p>
                         </div>
                     </div>
                     
@@ -306,28 +348,31 @@ ob_start(); ?>
                         </div>
                     </div>
         
-                    <div style="font-size:80%;overflow:auto">
-                     <div style="float:left">
-                        <div>Congratulations on the sale.</div>
-                        <div>Copyright&copy; <?php echo $invoice['website'];?></div>
-                     </div>
-                     <div style="float:right;">
-                        <div><?php echo $invoice['phone'];?></div>
-                        <div><?php echo $invoice['email'];?></div>
-                        <div><?php echo $invoice['address'];?></div>
-                        
+                <div style="width:100%;display:inline-block;">
+                    <div style="float:left">
+                        <!-- <div style="margin-bottom:20px 0;"><img style="width:200px;height:70px" src="upload/<?php //echo $invoice['signature'];?>" alt=""></span></div> -->
+                        <div style="margin-bottom:20px 0;">&nbsp;<img style="width:200px;height:70px" id="sign" src="cid:signature.png" alt="signature"></span></div>
+                        <div style="margin-bottom:20px 0">Signature</div>
+                    </div>
+                    <div style="float:right;">
+                        <div style="margin-bottom:0px">Congratulations on the warranty.</div>
+                        <div style="margin-bottom:27px">Copyright&copy; <?php echo $invoice['website'];?> </div>
                     </div>
                 </div>
         
+                
               </div>
             </div>
           </section>
         </main>
+        
             <?php $my_var = ob_get_clean();
         
             $query = mysqli_query($conn,"UPDATE orders SET status='$option' WHERE warranty_id='$id'");
-        
+            
             $my_var;
+            $imag =
+        
             $customer_email = mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM orders WHERE warranty_id=$id"));
             $email =  $customer_email['email'];
         
@@ -342,33 +387,45 @@ ob_start(); ?>
             $site_name = $mail['site_replay_email'];
             $address = $email;
             $body = $my_var;
-            $subject = 'Confirmation your order';
+            $subject = 'Your Order Has been Received';
             $send = sendVarifyCode($smtp_host,$smtp_username,$smtp_password,$smtp_port,$smtp_secure,$site_email,$site_name,$address,$body,$subject);
         
             if(!$send){
-                $msg = 'Delivery Day for your Product';
+                $msg = 'Your Mail was sent successfully.';
                 header("location:pending-delivery.php?msg=$msg");
             }
         }elseif($option=='success'){
             ob_start(); ?>
             <main style="color:#000 !important;">
               <section style="background:#fff;">
-               <div style="border:2px solid #dfdfdf;">
-                <div>      
-                    <h2 style="background:#065CB6;color:#fff;padding:4% 2%;margin:0px;"><?php echo $invoice['name'];?></h2>
-                  <div style="padding:2%">
-                        <div>
-                            <p ><b>Date:</b> <?php $time = time();echo date('d-m-y',$time);?></p>
-                            <p ><b>Status:</b> <span ><?php echo $option;?></span></p>
+               <div>
+                <div style="padding:2%">      
+                    <div >
+                        <div style="width:100%;display:inline-block;">
+                            <div style="float:left;">
+                                <h2 style="color:#065CB6;padding:5px 0;font-size:30px;font-weight:700;margin:0px;"><?php echo $invoice['name'];?></h2>
+                                <p><?php echo $invoice['address'];?></p>
+                                <p><?php echo $invoice['email'];?></p>
+                            </div>
+                            <div style="float:right;padding-top:35px;text-align:right">
+                                <p><b>Phone: </b> <?php echo $invoice['phone'];?></p>
+                                <p style="margin:0;"><b>What's app: </b><?php echo $invoice['whatsapp'];?></p>
+                            </div>                
+                        </div>
+                        <div> <hr></div>
+            
+                        <div style="padding-top:20px;">
+                            <p><b>Date:</b> <?php $time = time();echo date('d-m-y',$time);?></p>
+                            <p><b>Status:</b> <span ><?php echo $option;?></span></p>
                         </div>
             
-                        <div style="overflow:auto;">
-                            <div style="color:#065CB6;padding:20px 0;font-size:25px;font-weight:700">Billing address</div>
+                        <div>
+                            <div style="color:#065CB6;padding:20px 0;font-size:22px;font-weight:700">Invoice Bill</div>
                             <div style="border:2px solid #E5E5E5;padding:3px 10px;">
-                                <p><?php echo $customer['name'];?></p>
-                                <p><?php echo $customer['email'];?></p>
-                                <p><?php echo $customer['phone'];?></p>
-                                <p><?php echo $customer['address'];?></p>
+                                <p><b>Name: </b> <?php echo $customer['name'];?></p>
+                                <p><b>Email: </b> <?php echo $customer['email'];?></p>
+                                <p><b>Phone: </b> <?php echo $customer['phone'];?></p>
+                                <p><b>Address: </b> <?php echo $customer['address'];?></p>
                             </div>
                         </div>
                         
@@ -419,27 +476,31 @@ ob_start(); ?>
                             </div>
                         </div>
             
-                        <div style="font-size:80%;overflow:auto">
-                         <div style="float:left">
-                            <div>Congratulations on the sale.</div>
-                            <div>Copyright&copy; <?php echo $invoice['website'];?></div>
-                         </div>
-                         <div style="float:right;">
-                            <div><?php echo $invoice['phone'];?></div>
-                            <div><?php echo $invoice['email'];?></div>
-                            <div><?php echo $invoice['address'];?></div>
+                    <div style="width:100%;display:inline-block;">
+                        <div style="float:left">
+                            <!-- <div style="margin-bottom:20px 0;"><img style="width:200px;height:70px" src="upload/<?php //echo $invoice['signature'];?>" alt=""></span></div> -->
+                            <div style="margin-bottom:20px 0;">&nbsp;<img style="width:200px;height:70px" id="sign" src="cid:signature.png" alt="signature"></span></div>
+                            <div style="margin-bottom:20px 0">Signature</div>
+                        </div>
+                        <div style="float:right;">
+                            <div style="margin-bottom:0px">Congratulations on the warranty.</div>
+                            <div style="margin-bottom:27px">Copyright&copy; <?php echo $invoice['website'];?> </div>
                         </div>
                     </div>
             
+                    
                   </div>
                 </div>
               </section>
             </main>
+            
                 <?php $my_var = ob_get_clean();
             
                 $query = mysqli_query($conn,"UPDATE orders SET status='$option' WHERE warranty_id='$id'");
-            
+                
                 $my_var;
+                $imag =
+            
                 $customer_email = mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM orders WHERE warranty_id=$id"));
                 $email =  $customer_email['email'];
             
@@ -454,7 +515,7 @@ ob_start(); ?>
                 $site_name = $mail['site_replay_email'];
                 $address = $email;
                 $body = $my_var;
-                $subject = 'Thank you for purchasing our products';
+                $subject = 'Your Order Has been Received';
                 $send = sendVarifyCode($smtp_host,$smtp_username,$smtp_password,$smtp_port,$smtp_secure,$site_email,$site_name,$address,$body,$subject);
             
                 if(!$send){
