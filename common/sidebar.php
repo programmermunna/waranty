@@ -8,7 +8,7 @@
     </button>
   </a>
 
-  <a href="pos-index.php">
+  <a href="warranty-pos.php">
     <button class="btn nav_btn">
       <div class="sidebar_icon">
         <i class="fa-solid fa-layer-group"></i>
@@ -35,7 +35,7 @@
     </button>
   </a>
 
-  <a href="brand.php">
+  <a href="brand-all.php">
     <button class="btn nav_btn">
       <div class="sidebar_icon">
         <i class="fa-brands fa-bandcamp"></i>
@@ -62,10 +62,10 @@
       <span class="nav_toggle_icon">+</span>
     </button>
     <div class="hidden hide_nav_items nav_items">
-      <a href="pending-delivery.php">
+      <a href="pending-status.php">
         <button class="sub_link">Pending Status</button>
       </a>
-      <a href="success-delivery.php">
+      <a href="success-status.php">
         <button class="sub_link">Success Status</button>
       </a>
     </div>

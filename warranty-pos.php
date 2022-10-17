@@ -42,7 +42,7 @@ if (isset($_GET['id'])) {
         $order_update = mysqli_query($conn, "UPDATE orders SET name='$name', phone='$phone', email='$email', product_name='$product_name', brand='$brand', category='$category', warranty_fee='$warranty_fee', delivery_fee='$delivery_fee', advance_amount='$advance_amount', due_amount='$due_amount', status='$status' WHERE warranty_id='$id'");
 
         $msg = "Order has update successfully!";
-        header("location:pending-delivery.php?msg=$msg");
+        header("location:pending-status.php?msg=$msg");
     }
 
 
@@ -204,7 +204,7 @@ if (isset($_GET['id'])) {
                 $insert_brand = mysqli_query($conn, "INSERT INTO brand(name) VALUE('$add_brand')");
                 if ($insert_brand) {
                     $msg = "Successfully created a new Brand";
-                    header("location:pos-index.php?msg=$msg");
+                    header("location:warranty-pos.php?msg=$msg");
                 }
             }
             ?>
@@ -472,7 +472,7 @@ if (isset($_GET['id'])) {
                 $insert_brand = mysqli_query($conn, "INSERT INTO brand(name) VALUE('$add_brand')");
                 if ($insert_brand) {
                     $msg = "Successfully created a new Brand";
-                    header("location:pos-index.php?msg=$msg");
+                    header("location:warranty-pos.php?msg=$msg");
                 }
             }
             ?>
@@ -509,7 +509,7 @@ if (isset($_GET['id'])) {
                 $insert_brand = mysqli_query($conn, "INSERT INTO category(`category`, `parent_id`) VALUE('$category', '$parent_id')");
                 if ($insert_brand) {
                     $msg = "Successfully created a new Brand";
-                    header("location:pos-index.php?msg=$msg");
+                    header("location:warranty-pos.php?msg=$msg");
                 }
             }
             ?>

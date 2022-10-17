@@ -9,13 +9,8 @@ if(isset($_POST['submit'])){
   $new_pass = md5($_POST['new_pass']);
   $confirm_pass = md5($_POST['confirm_pass']);
 
-  $file_name = $_FILES['file']['name'];
-  $file_tmp = $_FILES['file']['tmp_name'];
-  move_uploaded_file($file_tmp,"upload/$file_name");
-
-
   if($new_pass===$confirm_pass){
-  $sql = "UPDATE admin_info SET name='$name',email='$email',pass='$new_pass',file='$file_name' WHERE id='1'"; 
+  $sql = "UPDATE admin_info SET name='$name',email='$email',pass='$new_pass' WHERE id='1'"; 
   $query = mysqli_query($conn,$sql);
   if($query){
     $msg = "Successfully Updated";
@@ -59,11 +54,31 @@ $admin_info = mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM admin_info WH
               <label>Confirm Password</label>
               <input type="password" name="confirm_pass" class="input"/>
             </div>
+            <input name="submit" class="btn submit_btn" type="submit" value="Save" />
+            </form>
+
+              <?php 
+              if(isset($_POST['save_image'])){
+                $file_name = $_FILES['file']['name'];
+                $file_tmp = $_FILES['file']['tmp_name'];
+                move_uploaded_file($file_tmp,"upload/$file_name");
+
+                $sql = "UPDATE admin_info SET file='$file_name' WHERE id='1'"; 
+                $query = mysqli_query($conn,$sql);
+                if($query){
+                  $msg = "Successfully Updated";
+                  header("location:admin-setting.php?msg=$msg");
+                }else{
+                  $msg = "Somethings error! Please try again.";  
+                }
+              }
+              ?>
+            <form action="" method="POST" enctype="multipart/form-data">
             <div>
               <label>Image</label>
               <input type="file" name="file" class="input"/>
             </div>
-            <input name="submit" class="btn submit_btn" type="submit" value="Save" />
+            <input name="save_image" class="btn submit_btn" type="submit" value="Save" />
           </form>
         </div>
       </section>

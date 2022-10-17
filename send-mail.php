@@ -131,14 +131,13 @@ ob_start(); ?>
     $site_name = $mail['site_replay_email'];
     $address = $email;
     $body = $my_var;
-    $subject = 'Your Order Has been Received';
+    $subject = 'Your warranty has been Received';
     $send = sendVarifyCode($smtp_host,$smtp_username,$smtp_password,$smtp_port,$smtp_secure,$site_email,$site_name,$address,$body,$subject);
 
-    if(!$send){
-        $msg = 'Your Mail was sent successfully.';
-        header("location:pending-delivery.php?msg=$msg");
-    }
-}elseif($option=='couriar'){
+    $msg = 'Your Mail was sent successfully.';
+    header("location:pending-status.php?msg=$msg");
+
+}elseif($option=='courier'){
     ob_start(); ?>
     <main style="color:#000 !important;">
       <section style="background:#fff;">
@@ -259,13 +258,12 @@ ob_start(); ?>
         $site_name = $mail['site_replay_email'];
         $address = $email;
         $body = $my_var;
-        $subject = 'Your Order Has been Received';
+        $subject = 'Your Product Has been Couriar';
         $send = sendVarifyCode($smtp_host,$smtp_username,$smtp_password,$smtp_port,$smtp_secure,$site_email,$site_name,$address,$body,$subject);
     
-        if(!$send){
-            $msg = 'Your Mail was sent successfully.';
-            header("location:pending-delivery.php?msg=$msg");
-        }
+        header("location:pending-status.php?msg=$msg");
+        $msg = 'Your Mail was sent successfully.';
+
     }elseif($option=='delivery'){
         ob_start(); ?>
         <main style="color:#000 !important;">
@@ -387,13 +385,12 @@ ob_start(); ?>
             $site_name = $mail['site_replay_email'];
             $address = $email;
             $body = $my_var;
-            $subject = 'Your Order Has been Received';
+            $subject = 'Today is delivery day for your product!';
             $send = sendVarifyCode($smtp_host,$smtp_username,$smtp_password,$smtp_port,$smtp_secure,$site_email,$site_name,$address,$body,$subject);
         
-            if(!$send){
-                $msg = 'Your Mail was sent successfully.';
-                header("location:pending-delivery.php?msg=$msg");
-            }
+            $msg = 'Your Mail was sent successfully.';
+            header("location:pending-status.php?msg=$msg");
+
         }elseif($option=='success'){
             ob_start(); ?>
             <main style="color:#000 !important;">
@@ -515,13 +512,11 @@ ob_start(); ?>
                 $site_name = $mail['site_replay_email'];
                 $address = $email;
                 $body = $my_var;
-                $subject = 'Your Order Has been Received';
+                $subject = 'Congratulations!. Your warranty successfull';
                 $send = sendVarifyCode($smtp_host,$smtp_username,$smtp_password,$smtp_port,$smtp_secure,$site_email,$site_name,$address,$body,$subject);
             
-                if(!$send){
-                    $msg = 'Your Mail was sent successfully.';
-                    header("location:pending-delivery.php?msg=$msg");
-                }
+                $msg = 'Your Mail was sent successfully.';
+                header("location:pending-status.php?msg=$msg");
             }
 
 ?>

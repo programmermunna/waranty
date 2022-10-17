@@ -26,6 +26,9 @@ $invoice = mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM invoice_setting 
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><?php echo $setting['name']?></title>
+    <link rel="icon" type="image/x-icon" href="upload/<?php echo $setting['favicon']?>">
     
     <script src="https://kit.fontawesome.com/20877c2550.js" crossorigin="anonymous"></script>
     
@@ -79,10 +82,10 @@ $invoice = mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM invoice_setting 
             <a href="admin-setting.php">
               <p>
                 <span class="user_icon"></span>
-                <span>Profile</span>
+                <span>Admin</span>
               </p>
             </a>
-              <a href="setting-index.php">
+              <a href="website-setting.php">
                 <p>
                   <span class="setting_icon"></span>
                   <span>Setting</span>

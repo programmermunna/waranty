@@ -29,7 +29,7 @@ if(isset($_POST['submit'])){
   $_SESSION['admin_id'] = $id;
   setcookie('admin_id', $id , time()+86000);
    $msg = "Welcome! Successfull login.";
-   header("location:pos-index.php?msg=$msg");
+   header("location:index.php?msg=$msg");
   }else{
      $msg = "Your Email or password is wrong!";
      header("location:login.php?msg=$msg");

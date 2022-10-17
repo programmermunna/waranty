@@ -457,4 +457,7 @@ li.main-category.cat:hover .category-wrap {
   .invoice_actions{
     display: none;
   }
+  .signature{
+    visibility: hidden;
+  }
 }

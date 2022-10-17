@@ -119,8 +119,7 @@
 
                         <div style="display:flex;justify-content:space-between;">
                             <div>
-                                <div style="margin-bottom:20px 0;"><img style="width:200px;height:70px"
-                                        src="upload/<?php echo $invoice['signature'];?>" alt=""></span></div>
+                                <div style="margin-bottom:20px 0;"><img class="signature" style="width:200px;height:70px" src="upload/<?php echo $invoice['signature'];?>" alt=""></span></div>
                                 <div style="margin-bottom:20px 0">Signature</div>
                             </div>
                             <div style="padding-top:40px;">
@@ -142,13 +141,13 @@
 if(isset($_GET['src'])){
     if($_GET['src']=='pending'){ ?>
                     <a style="padding:10px 20px; background:#065CB6;color:#fff;border-radius:5px;margin:0 10px;"
-                        href="pending-delivery.php">Back</a>
+                        href="pending-status.php">Back</a>
                     <?php  }elseif($_GET['src']=='success'){ ?>
                     <a style="padding:10px 20px; background:#065CB6;color:#fff;border-radius:5px;margin:0 10px;"
-                        href="success-delivery.php">Back</a>
+                        href="success-status.php">Back</a>
                     <?php }}else{?>
                     <a style="padding:10px 20px; background:#065CB6;color:#fff;border-radius:5px;margin:0 10px;"
-                        href="pos-index.php">Back</a>
+                        href="warranty-pos.php">Back</a>
                     <?php } ?>
                     <button onclick='window.print()'
                         style="padding:10px 20px; background:#065CB6;color:#fff;border-radius:5px;margin:0 10px;">Print</button>

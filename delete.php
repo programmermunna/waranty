@@ -26,7 +26,7 @@ switch ($action) {
   case "pending":
     $pending = mysqli_query($conn, "DELETE FROM orders WHERE id=$id");
     $msg = "Has beeen delted!";
-    header("location:pending-delivery.php?msg=$msg");
+    header("location:pending-status.php?msg=$msg");
     break;
   case "success":
     $success = mysqli_query($conn, "DELETE FROM product WHERE id=$id AND status='Success'");
@@ -35,12 +35,12 @@ switch ($action) {
     break;
   case "delete_item":
     $product_item = mysqli_query($conn, "DELETE FROM tmp_product WHERE order_no='$order' AND product_code='$id'");
-    header("location:pos-index.php?order=$order");
+    header("location:warranty-pos.php?order=$order");
     break;
   case "brand":
     $brand = mysqli_query($conn, "DELETE FROM brand WHERE id='$id'");
     $msg = "Has beeen delted!";
-    header("location:brand.php?msg=$msg");
+    header("location:brand-all.php?msg=$msg");
     break;
   case "moderator":
     $brand = mysqli_query($conn, "DELETE FROM admin_info WHERE id='$id'");
