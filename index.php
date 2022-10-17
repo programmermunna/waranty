@@ -43,7 +43,7 @@
               <div class="card_top">
                 <div class="card_top_icon bg-gradient-to-r from-blue-500 to-blue-600">&#x2637</div>
                 <div class="card_top_info">
-                  <p class="card_top_numbers">$<?php echo $total_amount; ?></p>                  
+                  <p class="card_top_numbers">৳<?php echo $total_amount; ?></p>                  
                 </div>
               </div>
               <div class="card_bottom">
@@ -63,7 +63,7 @@
               <div class="card_top">
                 <div class="card_top_icon from-blue-500 to-blue-600">&#x2637</div>
                 <div class="card_top_info">
-                  <p class="card_top_numbers">$<?php echo $total_warranty_fee; ?></p>                  
+                  <p class="card_top_numbers">৳<?php echo $total_warranty_fee; ?></p>                  
                 </div>
               </div>
               <div class="card_bottom">
@@ -83,7 +83,7 @@
               <div class="card_top">
                 <div class="card_top_icon from-blue-500 to-blue-600">&#x2637</div>
                 <div class="card_top_info">
-                  <p class="card_top_numbers">$<?php echo $total_delivery_fee; ?></p>                  
+                  <p class="card_top_numbers">৳<?php echo $total_delivery_fee; ?></p>                  
                 </div>
               </div>
               <div class="card_bottom">
@@ -103,7 +103,7 @@
               <div class="card_top">
                 <div class="card_top_icon from-blue-500 to-blue-600">&#x2637</div>
                 <div class="card_top_info">
-                  <p class="card_top_numbers">$<?php echo $total_advance_amount; ?></p>                  
+                  <p class="card_top_numbers">৳<?php echo $total_advance_amount; ?></p>                  
                 </div>
               </div>
               <div class="card_bottom">
@@ -123,7 +123,7 @@
               <div class="card_top">
                 <div class="card_top_icon from-blue-500 to-blue-600">&#x2637</div>
                 <div class="card_top_info">
-                  <p class="card_top_numbers">$<?php echo $total_due_amount; ?></p>                  
+                  <p class="card_top_numbers">৳<?php echo $total_due_amount; ?></p>                  
                 </div>
               </div>
               <div class="card_bottom">

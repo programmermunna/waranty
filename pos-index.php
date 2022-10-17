@@ -1,7 +1,6 @@
 <!-- Header -->
 <?php include("common/header.php"); ?>
 <!-- Header -->
-
 <?php
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
@@ -64,23 +63,23 @@ if (isset($_GET['id'])) {
                         <div style="margin-right:30px;" class="add_page_main_content">
                             <div class="py-5">
                                 <label>Full Name</label>
-                                <input required type="text" name="name" placeholder="Full name" class="input required" value="<?php echo $orders['name'] ?>" />
+                                <input required type="text" name="name" placeholder="Full name" class="input" value="<?php echo $orders['name'] ?>" />
                             </div>
                             <div class="py-5">
                                 <label>Phone</label>
-                                <input required type="text" name="phone" placeholder="Phone" class="input required" value="<?php echo $orders['phone'] ?>" />
+                                <input required type="text" name="phone" placeholder="Phone" class="input" value="<?php echo $orders['phone'] ?>" />
                             </div>
                             <div class="py-5">
                                 <label>Email</label>
-                                <input type="text" name="email" placeholder="Email" class="input required" value="<?php echo $orders['email'] ?>" />
+                                <input type="text" name="email" placeholder="Email" class="input" value="<?php echo $orders['email'] ?>" />
                             </div>
                             <div class="py-5">
                                 <label>City</label>
-                                <input type="text" name="city" placeholder="City" class="input required" value="<?php echo $customer['city'] ?>" />
+                                <input type="text" name="city" placeholder="City" class="input" value="<?php echo $customer['city'] ?>" />
                             </div>
                             <div class="py-5">
                                 <label>Address</label>
-                                <input required type="text" name="address" placeholder="Address" class="input required" value="<?php echo $customer['address'] ?>" />
+                                <input type="text" name="address" placeholder="Address" class="input" value="<?php echo $customer['address'] ?>" />
                             </div>
                         </div>
                         <!-- =======================part==================== -->
@@ -88,7 +87,7 @@ if (isset($_GET['id'])) {
                             <div>
                                 <div class="py-5">
                                     <label>Product Name</label>
-                                    <input required type="text" name="product_name" placeholder="Produc Name" class="input required" value="<?php echo $orders['product_name'] ?>" />
+                                    <input required type="text" name="product_name" placeholder="Produc Name" class="input" value="<?php echo $orders['product_name'] ?>" />
                                 </div>
                                 <div class="py-5">
                                     <label>Brand</label>
@@ -111,7 +110,7 @@ if (isset($_GET['id'])) {
                                     <label>Category</label>
 
                                     <div style="display: flex;">
-                                        <input required id="parent_cat" name="category" placeholder="Select Category" type="search" class="input" value="<?php echo $orders['category'] ?>">
+                                        <input id="parent_cat" name="category" placeholder="Select Category" type="search" class="input" value="<?php echo $orders['category'] ?>">
                                         <button type="button" class="brand_category_plus add_category_btn">+</button>
                                     </div>
 
@@ -123,7 +122,7 @@ if (isset($_GET['id'])) {
 
                                 <div class="note">
                                     <label>Problem:</label>
-                                    <textarea class="note_textarea" name="note" id="" rows="5"><?php echo $product['note']; ?></textarea>
+                                    <textarea required class="note_textarea" name="note" id="" rows="5"><?php echo $product['note']; ?></textarea>
                                 </div>
 
 
@@ -155,11 +154,11 @@ if (isset($_GET['id'])) {
                                         <div class="brand_categroy_content">
                                             <div class="brand_categroy_width">
                                                 <b>Warranty Fee</b>
-                                                <input name="warranty_fee" type="number" placeholder="Warranty Fee" class="input warranty_fee" value="<?php echo $orders['warranty_fee'] ?>">
+                                                <input required name="warranty_fee" type="number" placeholder="Warranty Fee" class="input warranty_fee" value="<?php echo $orders['warranty_fee'] ?>">
                                             </div>
                                             <div class="brand_categroy_width">
                                                 <b>Delivery Fee</b>
-                                                <input name="delivery_fee" type="number" placeholder="Delivery Fee" class="input delivery_fee" value="<?php echo $orders['delivery_fee'] ?>">
+                                                <input required name="delivery_fee" type="number" placeholder="Delivery Fee" class="input delivery_fee" value="<?php echo $orders['delivery_fee'] ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -180,7 +179,7 @@ if (isset($_GET['id'])) {
                                     </div>
 
                                     <b>Status</b>
-                                    <select name="status" class="input required">
+                                    <select name="status" class="input">
                                             <?php echo "<option selected>" . $orders['status'] . "</option>" ?>
                                             <option value="receive">Receive</option>
                                             <option value="courier">Courier</option>
@@ -239,11 +238,10 @@ if (isset($_GET['id'])) {
                     <div class="hide_add_new_cat fixed inset-0 w-full h-screen bg-black bg-opacity-50 z-40"></div>
                     <div class="fixed w-[96%] md:w-[500px] inset-0 m-auto bg-white rounded shadow z-50 h-fit">
                         <h1 class="p-4 border-b">
-                            Add New Category
-                        </h1>
+                            Add New Category</h1>
                         <div class="p-4 relative">
                             <label for="parent_cat">Parent Category</label>
-                            <input required id="parent_cat" placeholder="Select Category" type="search" class="input required mt-2">
+                            <input required id="parent_cat" placeholder="Select Category" type="search" class="input mt-2">
                             <input name="parent_category" type="hidden" id="category-hidden-id">
 
                             <div class="relative categories_ul_ref_parent" style="display: none;">
@@ -330,23 +328,23 @@ if (isset($_GET['id'])) {
                         <div style="margin-right:30px;" class="add_page_main_content">
                             <div class="py-5">
                                 <label>Full Name</label>
-                                <input required type="text" name="name" placeholder="Full name" class="input required" />
+                                <input required type="text" name="name" placeholder="Full name" class="input" />
                             </div>
                             <div class="py-5">
                                 <label>Phone</label>
-                                <input required type="text" name="phone" placeholder="Phone" class="input required" />
+                                <input required type="text" name="phone" placeholder="Phone" class="input" />
                             </div>
                             <div class="py-5">
                                 <label>Email</label>
-                                <input type="text" name="email" placeholder="Email" class="input required" />
+                                <input type="text" name="email" placeholder="Email" class="input" />
                             </div>
                             <div class="py-5">
                                 <label>City</label>
-                                <input type="text" name="city" placeholder="City" class="input required" />
+                                <input type="text" name="city" placeholder="City" class="input" />
                             </div>
                             <div class="py-5">
                                 <label>Address</label>
-                                <input required type="text" name="address" placeholder="Address" class="input required" />
+                                <input type="text" name="address" placeholder="Address" class="input" />
                             </div>
                         </div>
                         <!-- =======================part==================== -->
@@ -354,7 +352,7 @@ if (isset($_GET['id'])) {
                             <div>
                                 <div class="py-5">
                                     <label>Product Name</label>
-                                    <input required type="text" name="product_name" placeholder="Produc Name" class="input required" />
+                                    <input required type="text" name="product_name" placeholder="Produc Name" class="input" />
                                 </div>
                                 <div class="py-5">
                                     <label>Brand</label>
@@ -377,7 +375,7 @@ if (isset($_GET['id'])) {
                                     <label>Category</label>
 
                                     <div style="display: flex;">
-                                        <input required id="parent_cat" placeholder="Select Category" type="search" class="input">
+                                        <input id="parent_cat" name="category" placeholder="Select Category" type="search" class="input">
                                         <button type="button" class="brand_category_plus add_category_btn">+</button>
                                     </div>
 
@@ -389,7 +387,7 @@ if (isset($_GET['id'])) {
 
                                 <div class="note" class="py-5">
                                     <label>Problem:</label>
-                                    <textarea class="note_textarea" name="note" id="" rows="5" placeholder="Write something about this product."></textarea>
+                                    <textarea required class="note_textarea" name="note" id="" rows="5" placeholder="Write something about this product."></textarea>
                                 </div>
 
 
@@ -417,15 +415,15 @@ if (isset($_GET['id'])) {
                                         </div>
                                     </div>
 
-                                    <div class="pos_input required_item">
+                                    <div class="pos_input_item">
                                         <div class="brand_categroy_content">
                                             <div class="brand_categroy_width">
                                                 <b>Warranty Fee</b>
-                                                <input name="warranty_fee" type="number" placeholder="Warranty Fee" class="input warranty_fee">
+                                                <input required name="warranty_fee" type="number" placeholder="Warranty Fee" class="input warranty_fee">
                                             </div>
                                             <div class="brand_categroy_width">
                                                 <b>Delivery Fee</b>
-                                                <input name="delivery_fee" type="number" placeholder="Delivery Fee" class="input delivery_fee">
+                                                <input required name="delivery_fee" type="number" placeholder="Delivery Fee" class="input delivery_fee">
                                             </div>
                                         </div>
                                     </div>
@@ -489,7 +487,7 @@ if (isset($_GET['id'])) {
 
                         <div class="p-4 space-y-2">
                             <label for="cat_name">Brand Name</label>
-                            <input required name="add_brand_name" type="text" class="input">
+                            <input name="add_brand_name" type="text" class="input">
 
                         </div>
 
@@ -525,7 +523,7 @@ if (isset($_GET['id'])) {
                         </h1>
                         <div class="p-4 relative">
                             <label for="parent_cat">Parent Category</label>
-                            <input required id="parent_cat" placeholder="Select Category" type="search" class="input required mt-2">
+                            <input required id="parent_cat" placeholder="Select Category" type="search" class="input mt-2">
                             <input name="parent_id" type="hidden" id="category-hidden-id">
 
                             <div class="relative categories_ul_ref_parent" style="display: none;">

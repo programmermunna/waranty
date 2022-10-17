@@ -75,15 +75,15 @@
                             </tr>
                             <tr style="border:2px solid #dfdfdf;">
                                 <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Total Fee</b></td>
-                                <td style="border:1px solid #dfdfdf;padding:5px;"><b><?php echo $row['advance_amount']+$row['due_amount'];?></b></td>  
+                                <td style="border:1px solid #dfdfdf;padding:5px;"><b>৳ <?php echo $row['advance_amount']+$row['due_amount'];?></b></td>  
                             </tr>
                             <tr style="border:2px solid #dfdfdf;">
                                 <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Advance Fee</b></td>
-                                <td style="border:1px solid #dfdfdf;padding:5px;"><b><?php echo $row['advance_amount'];?></b></td>  
+                                <td style="border:1px solid #dfdfdf;padding:5px;"><b>৳ <?php echo $row['advance_amount'];?></b></td>  
                             </tr>
                             <tr style="border:2px solid #dfdfdf;">
                                 <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Due</b></td>
-                                <td style="border:1px solid #dfdfdf;padding:5px;"><b><?php echo $row['due_amount'];?></b></td>  
+                                <td style="border:1px solid #dfdfdf;padding:5px;"><b>৳ <?php echo $row['due_amount'];?></b></td>  
                             </tr>                            
                         </tbody>
                     </table>
