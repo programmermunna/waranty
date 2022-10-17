@@ -25,7 +25,10 @@
   <!-- Page Content -->
   <section style="background:#fff;margin-top:2.6%;" class="content_wrapper">
    <div style="border:2px solid #dfdfdf;" class="w-full">
-     <h3 style="width:100%;margin:0 auto;background:#065CB6;color:#fff;padding:20px;"><?php echo $invoice['name'];?></h3>
+     <div style="display:flex;justify-content:flex-start;width:100%;margin:0 auto;background:#065CB6;color:#fff;padding:20px;">
+        <img style="width:200px;height:70px" src="upload/<?php echo $invoice['logo'];?>" alt="logo">
+        <h3 style="width:100%;margin:0 auto;background:#065CB6;color:#fff;padding:20px;"><?php echo $invoice['name'];?></h3>
+     </div>
     <div class="invoice">      
       <div>
             <div style="padding:0 10px">
@@ -34,12 +37,12 @@
             </div>
 
             <div>
-                <div style="color:#065CB6;padding:20px 0;font-size:25px;font-weight:700">Billing address</div>
+                <div style="color:#065CB6;padding:20px 0;font-size:25px;font-weight:700">Invoice Bill</div>
                 <div style="border:2px solid #E5E5E5;padding:3px 10px;">
-                    <p><?php echo $customer['name'];?></p>
-                    <p><?php echo $customer['email'];?></p>
-                    <p><?php echo $customer['phone'];?></p>
-                    <p><?php echo $customer['address'];?></p>
+                    <p><b>Name: </b> <?php echo $customer['name'];?></p>
+                    <p><b>Email: </b> <?php echo $customer['email'];?></p>
+                    <p><b>Phone: </b> <?php echo $customer['phone'];?></p>
+                    <p><b>Address: </b> <?php echo $customer['address'];?></p>
                 </div>
             </div>
             
@@ -90,8 +93,17 @@
                 </div>
             </div>
 
-            <div style="margin-top:20px">Congratulations on the sale.<span style="float:right ;"><?php echo $invoice['phone'];?></span></div>
-            <div style="margin-bottom:20px 0">Copyright&copy; <?php echo $invoice['website'];?> <span style="float:right ;"><?php echo $invoice['email'];?></span></div>
+            <div>
+                <div style="margin-bottom:20px 0"><img style="width:200px;height:70px" src="upload/<?php echo $invoice['signature'];?>" alt=""><span style="float:right ;"></span></div>
+                <div style="margin-bottom:20px 0">Signature<span style="float:right ;">Buyer Signature</span></div>
+            </div>
+
+            <div>
+                <div style="margin-top:20px"> &nbsp;<span style="float:right ;"><?php echo $invoice['phone'];?></span></div>
+                <div style="margin-bottom:0px">Congratulations on the sale.<span style="float:right ;"><?php echo $invoice['email'];?></span></div>
+                <div style="margin-bottom:30px">Copyright&copy; <?php echo $invoice['website'];?>  <span style="float:right ;"><?php echo $invoice['address'];?></span></div>
+            </div>
+
 
         </div>
     </div>

@@ -90,8 +90,9 @@ ob_start(); ?>
              <div style="float:right;">
                 <div><?php echo $invoice['phone'];?></div>
                 <div><?php echo $invoice['email'];?></div>
+                <div><?php echo $invoice['address'];?></div>
             </div>
-        </div>
+            </div>
 
       </div>
     </div>
@@ -201,6 +202,7 @@ ob_start(); ?>
                  <div style="float:right;">
                     <div><?php echo $invoice['phone'];?></div>
                     <div><?php echo $invoice['email'];?></div>
+                    <div><?php echo $invoice['address'];?></div>
                 </div>
             </div>
     
@@ -312,6 +314,8 @@ ob_start(); ?>
                      <div style="float:right;">
                         <div><?php echo $invoice['phone'];?></div>
                         <div><?php echo $invoice['email'];?></div>
+                        <div><?php echo $invoice['address'];?></div>
+                        
                     </div>
                 </div>
         
@@ -423,6 +427,7 @@ ob_start(); ?>
                          <div style="float:right;">
                             <div><?php echo $invoice['phone'];?></div>
                             <div><?php echo $invoice['email'];?></div>
+                            <div><?php echo $invoice['address'];?></div>
                         </div>
                     </div>
             

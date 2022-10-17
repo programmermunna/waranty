@@ -19,10 +19,11 @@ if(isset($_POST['submit'])){
   $sql = "UPDATE setting SET name='$name',email='$email',phone='$phone',address='$address',city='$city',country='$country',website='$website',logo='$logo_name',time='$time' WHERE id=1";
   $query = mysqli_query($conn,$sql);
   if($query){
-   $msg = "Successfully Updated Setting!";
-   header("location:setting-index.php?msg=$msg");
+  $msg = "Successfully Updated Setting!";
+  header("location:setting-index.php?msg=$msg");
+echo "somethings";
   }else{
-   $msg = "Something is worng!";
+  $msg = "Something is worng!";
   }
 }
 
@@ -90,6 +91,7 @@ $row = mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM setting WHERE id=1")
             </div>
             
             <input class="btn submit_btn" name="submit" type="submit" value="Update" />
+            <!--<button type="submit" name="submit" class="btn submit_btn">Update</button>-->
           </form>
         </div>
       </section>
