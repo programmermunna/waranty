@@ -76,7 +76,7 @@ if(isset($_POST['submit'])){
               <textarea class="note_textarea" value="<?php echo $row['note']?>" name="note" id="" rows="5"><?php echo $row['note']?></textarea>
             </div>
 
-            <input class="btn submit_btn" name="submit" type="submit" value="Update" />
+            <input style="cursor:pointer" class="btn submit_btn" name="submit" type="submit" value="Update" />
           </form>
         </div>
       </section>

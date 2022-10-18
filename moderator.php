@@ -154,8 +154,8 @@ if (isset($_POST['update'])) {
                                             </td>
                                             <td class="p-3 border whitespace-nowrap">
                                                 <div class="w-full flex_center gap-1">
-                                                    <a data-id="<?php echo $row['id'] ?>" data-name="<?php echo $row['name'] ?>" class="edit_brand_btn btn table_edit_btn edit_moderator_btn">Edit</a>
-                                                    <a class="btn table_edit_btn" href="delete.php?src=moderator&&id=<?php echo $row['id'] ?>">Delete</a>
+                                                    <a style="cursor:pointer" data-id="<?php echo $row['id'] ?>" data-name="<?php echo $row['name'] ?>" class="edit_brand_btn btn table_edit_btn edit_moderator_btn">Edit</a>
+                                                    <a style="cursor:pointer" class="btn table_edit_btn" href="delete.php?src=moderator&&id=<?php echo $row['id'] ?>">Delete</a>
                                                 </div>
                                             </td>
                                         </tr>

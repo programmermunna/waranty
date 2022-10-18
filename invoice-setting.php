@@ -60,7 +60,7 @@ $row = mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM invoice_setting WHER
                     <label>website</label>
                     <input type="text" name="website" value="<?php echo $row['website']?>" class="input" />
                 </div>
-                <input class="btn submit_btn" name="submit" type="submit" value="Save" />
+                <input style="cursor:pointer" class="btn submit_btn" name="submit" type="submit" value="Save" />
             </form>
 
             <?php 
@@ -84,7 +84,7 @@ $row = mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM invoice_setting WHER
                 <label>Signature</label>
                 <input type="file" name="file" class="input" />
             </div>
-            <input class="btn submit_btn" name="signature_submit" type="submit" value="Save" />
+            <input style="cursor:pointer" class="btn submit_btn" name="signature_submit" type="submit" value="Save" />
             </form>
 
 

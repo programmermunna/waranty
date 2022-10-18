@@ -187,7 +187,7 @@ if (isset($_GET['id'])) {
                                             <option value="success">Success</option>
                                     </select>
 
-                                    <input class="add_brand_btn btn bg-blue-500 active:bg-blue-700 hover:bg-blue-600 text-white p-2 rounded" type="submit" name="submit" value="Update Warranty">
+                                    <input style="cursor:pointer" class="add_brand_btn btn bg-blue-500 active:bg-blue-700 hover:bg-blue-600 text-white p-2 rounded" type="submit" name="submit" value="Update Warranty">
                                 </div>
                             </div>
                         </div>
@@ -455,7 +455,7 @@ if (isset($_GET['id'])) {
                                         <?php } ?>
                                     </select>
 
-                                    <input class="add_brand_btn btn bg-blue-500 active:bg-blue-700 hover:bg-blue-600 text-white p-2 rounded" type="submit" name="submit" value="Create Warranty">
+                                    <input style="cursor:pointer" class="add_brand_btn btn bg-blue-500 active:bg-blue-700 hover:bg-blue-600 text-white p-2 rounded" type="submit" name="submit" value="Create Warranty">
                                 </div>
                             </div>
                         </div>

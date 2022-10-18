@@ -74,7 +74,7 @@ $row = mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM setting WHERE id=1")
               <input type="text" name="website" value="<?php echo $row['website']?>" class="input" />
             </div>
             
-            <input class="btn submit_btn" name="submit" type="submit" value="Update" />
+            <input style="cursor:pointer" class="btn submit_btn" name="submit" type="submit" value="Update" />
           </form>
 
 
@@ -107,7 +107,7 @@ $row = mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM setting WHERE id=1")
                 class="input"
               />
             </div>
-            <input class="btn submit_btn" name="favicon" type="submit" value="Update" />
+            <input style="cursor:pointer" class="btn submit_btn" name="favicon" type="submit" value="Update" />
             </form>
 
             <?php      
@@ -141,7 +141,7 @@ $row = mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM setting WHERE id=1")
                 class="input"
               />
             </div>
-            <input class="btn submit_btn" name="logo" type="submit" value="Update" />            
+            <input style="cursor:pointer" class="btn submit_btn" name="logo" type="submit" value="Update" />            
             <div>
             </form>
 

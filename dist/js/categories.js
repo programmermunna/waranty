@@ -45,8 +45,8 @@ const renderCategories = (get_categories) => {
             }</span>
         </div>
         <div class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-        <a class="cat_btn cat_btn1 edit_btn" data-name="${c?.category}" data-id="${c?.id}"> Edit </a> 
-        <a class="cat_btn cat_btn2" href="delete.php?src=category&&id=${c?.id}"> Delete </a> 
+        <a style="cursor:pointer" class="cat_btn cat_btn1 edit_btn" data-name="${c?.category}" data-id="${c?.id}"> Edit </a> 
+        <a style="cursor:pointer" class="cat_btn cat_btn2" href="delete.php?src=category&&id=${c?.id}"> Delete </a> 
         </div>
        </div>
     ${c.children.length > 0

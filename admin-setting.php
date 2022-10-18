@@ -54,7 +54,7 @@ $admin_info = mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM admin_info WH
               <label>Confirm Password</label>
               <input type="password" name="confirm_pass" class="input"/>
             </div>
-            <input name="submit" class="btn submit_btn" type="submit" value="Save" />
+            <input style="cursor:pointer" name="submit" class="btn submit_btn" type="submit" value="Save" />
             </form>
 
               <?php 
@@ -78,7 +78,7 @@ $admin_info = mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM admin_info WH
               <label>Image</label>
               <input type="file" name="file" class="input"/>
             </div>
-            <input name="save_image" class="btn submit_btn" type="submit" value="Save" />
+            <input style="cursor:pointer" name="save_image" class="btn submit_btn" type="submit" value="Save" />
           </form>
         </div>
       </section>

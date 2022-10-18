@@ -143,8 +143,8 @@ if (isset($_POST['update'])) {
                                                 </div>
                                             <?php } else { ?>
                                                 <div class="w-full flex_center gap-1">
-                                                    <a data-name="<?php echo $row['name'] ?>" data-id="<?php echo $row['id'] ?>" class="edit_brand_btn btn table_edit_btn">Edit</a>
-                                                    <a class="btn table_edit_btn" href="delete.php?src=brand&&id=<?php echo $row['id'] ?>">Delete</a>
+                                                    <a style="cursor:pointer" data-name="<?php echo $row['name'] ?>" data-id="<?php echo $row['id'] ?>" class="edit_brand_btn btn table_edit_btn">Edit</a>
+                                                    <a style="cursor:pointer" class="btn table_edit_btn" href="delete.php?src=brand&&id=<?php echo $row['id'] ?>">Delete</a>
                                                 </div>
                                             <?php } ?>
                                         </td>

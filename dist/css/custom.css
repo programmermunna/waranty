@@ -301,10 +301,12 @@ li.main-category.cat:hover .category-wrap {
   border-radius: 2px;
   margin: 5px;
   color: white;
+  cursor: pointer;
 }
 
 .cat_btn2 {
   background: #338FFF;
+  cursor: pointer;
 }
 
 .pos_category {

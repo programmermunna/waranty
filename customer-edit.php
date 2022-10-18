@@ -63,7 +63,7 @@ if(isset($_POST['submit'])){
             <label>Address</label>
             <input type="text" name="address" class="input" value="<?php echo $row['address']?>" />
             </div>
-            <input class="btn submit_btn" name="submit" type="submit" valu="Update" />
+            <input style="cursor:pointer" class="btn submit_btn" name="submit" type="submit" valu="Update" />
           </form>
         </div>
       </section>
