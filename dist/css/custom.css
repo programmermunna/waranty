@@ -256,7 +256,7 @@ li.main-category.cat:hover .category-wrap {
   margin-right: 3px;
 }
 
-/* ----------------popup--- */
+/* ----------------popup area---------- */
 #popup {
   display: none;
 }
@@ -303,6 +303,7 @@ li.main-category.cat:hover .category-wrap {
   color: white;
   cursor: pointer;
 }
+
 
 .cat_btn2 {
   background: #338FFF;
