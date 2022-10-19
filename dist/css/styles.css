@@ -1174,8 +1174,7 @@ h3 {
 }
 
 .content_wrapper {
-  scrollbar-width: thin;
-  height: calc(100vh - 70px);
+  scrollbar-width: thin; 
 }
 
 /* Add Page Content */

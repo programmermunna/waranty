@@ -80,7 +80,10 @@ $row = mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM invoice_setting WHER
             <form action="" method="POST" enctype="multipart/form-data">
             <div>
               <p style="text-align:center;">Required Signature Size: 200*60px</p>
-              <img style="width:100%;height:200px;" src="upload/<?php echo $invoice_signature['signature']?>" alt="logo">
+            <?php 
+                if($invoice_signature['signature'] != ''){ ?>
+                <img style="width:100%;height:auto;" src="upload/<?php echo $invoice_signature['signature']?>">
+                <?php } ?>
                 <label>Signature</label>
                 <input type="file" name="file" class="input" />
             </div>

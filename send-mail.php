@@ -12,23 +12,23 @@
 
 if($option=='receive'){
 ob_start(); ?>
-<main style="color:#000 !important;">
+<main style="color:#000 !important;line-height:15px;">
   <section style="background:#fff;">
    <div>
     <div style="padding:2%">      
         <div >
             <div style="width:100%;display:inline-block;">
                 <div style="float:left;">
-                    <h2 style="color:#065CB6;padding:5px 0;font-size:30px;font-weight:700;margin:0px;"><?php echo $invoice['name'];?></h2>
+                    <h2 style="color:#065CB6;font-size:30px;font-weight:700;margin:0px;"><?php echo $invoice['name'];?></h2>
                     <p><?php echo $invoice['address'];?></p>
                     <p><?php echo $invoice['email'];?></p>
                 </div>
-                <div style="float:right;padding-top:35px;text-align:right">
-                    <p><b>Phone: </b> <?php echo $invoice['phone'];?></p>
-                    <p style="margin:0;"><b>What's app: </b><?php echo $invoice['whatsapp'];?></p>
+                <div style="float:right;padding-top:30px;text-align:right">
+                    <p><?php echo $invoice['phone'];?></p>
+                    <p style="margin:0;"><?php echo $invoice['whatsapp'];?></p>
                 </div>                
             </div>
-            <div> <hr></div>
+            <div><hr></div>
 
             <div style="padding-top:20px;">
                 <p><b>Date:</b> <?php $time = time();echo date('d-m-y',$time);?></p>
@@ -93,14 +93,14 @@ ob_start(); ?>
             </div>
 
         <div style="width:100%;display:inline-block;">
-            <div style="float:left">
-                <!-- <div style="margin-bottom:20px 0;"><img style="width:200px;height:70px" src="upload/<?php //echo $invoice['signature'];?>" alt=""></span></div> -->
-                <div style="margin-bottom:20px 0;">&nbsp;<img style="width:200px;height:70px" id="sign" src="cid:signature.png" alt="signature"></span></div>
-                <div style="margin-bottom:20px 0">Signature</div>
+            <div style="float:left;width:40%">
+                <!-- <div><img style="width:115px;height:30px" src="upload/<?php //echo $invoice['signature'];?>" alt=""></span></div> -->
+                <div><img style="width:115px;height:30px" id="sign" src="cid:signature.png" alt="signature"></span></div>
+                <div>Signature</div>
             </div>
-            <div style="float:right;">
-                <div style="margin-bottom:0px">Congratulations on the warranty.</div>
-                <div style="margin-bottom:27px">Copyright&copy; <?php echo $invoice['website'];?> </div>
+            <div style="float:right;width:60%;text-align:right;padding-top:20px;">
+                <div>Congratulations on the warranty.</div>
+                <div>Copyright&copy; <?php echo $invoice['website'];?> </div>
             </div>
         </div>
 
@@ -139,103 +139,103 @@ ob_start(); ?>
 
 }elseif($option=='courier'){
     ob_start(); ?>
-    <main style="color:#000 !important;">
-      <section style="background:#fff;">
-       <div>
-        <div style="padding:2%">      
-            <div >
-                <div style="width:100%;display:inline-block;">
-                    <div style="float:left;">
-                        <h2 style="color:#065CB6;padding:5px 0;font-size:30px;font-weight:700;margin:0px;"><?php echo $invoice['name'];?></h2>
-                        <p><?php echo $invoice['address'];?></p>
-                        <p><?php echo $invoice['email'];?></p>
-                    </div>
-                    <div style="float:right;padding-top:35px;text-align:right">
-                        <p><b>Phone: </b> <?php echo $invoice['phone'];?></p>
-                        <p style="margin:0;"><b>What's app: </b><?php echo $invoice['whatsapp'];?></p>
-                    </div>                
-                </div>
-                <div> <hr></div>
-    
-                <div style="padding-top:20px;">
-                    <p><b>Date:</b> <?php $time = time();echo date('d-m-y',$time);?></p>
-                    <p><b>Status:</b> <span ><?php echo $option;?></span></p>
-                </div>
-    
-                <div>
-                    <div style="color:#065CB6;padding:20px 0;font-size:22px;font-weight:700">Invoice Bill</div>
-                    <div style="border:2px solid #E5E5E5;padding:3px 10px;">
-                        <p><b>Name: </b> <?php echo $customer['name'];?></p>
-                        <p><b>Email: </b> <?php echo $customer['email'];?></p>
-                        <p><b>Phone: </b> <?php echo $customer['phone'];?></p>
-                        <p><b>Address: </b> <?php echo $customer['address'];?></p>
-                    </div>
-                </div>
-                
-                <div style="overflow:auto;">
-                    <div >
-                        <table style="text-align:left;margin:30px auto;width:100%;border-collapse: collapse;">
-                            <thead>                     
-                                <tr style="border:2px solid #dfdfdf;font-size:15px;">
-                                    <th style="border:1px solid #dfdfdf;padding:5px;">
-                                        Product Name
-                                    </th>
-                                    <th style="border:1px solid #dfdfdf;padding:5px;">
-                                        Brand
-                                    </th>
-                                    <th style="border:1px solid #dfdfdf;padding:5px;">
-                                        Category
-                                    </th>
-                                    <th style="border:1px solid #dfdfdf;padding:5px;">
-                                        Receive Date
-                                    </th>
-                                    <th style="border:1px solid #dfdfdf;padding:5px;">
-                                        Delivery Date
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody >
-                                <tr style="border:2px solid #dfdfdf;">
-                                    <td style="border:1px solid #dfdfdf;padding:5px;"><?php echo $orders['product_name'];?></td>
-                                    <td style="border:1px solid #dfdfdf;padding:5px;"><?php echo $orders['brand'];?></td>
-                                    <td style="border:1px solid #dfdfdf;padding:5px;"><?php echo $orders['category'];?></td>
-                                    <td style="border:1px solid #dfdfdf;padding:5px;"><?php echo $orders['receive_date'];?></td>
-                                    <td style="border:1px solid #dfdfdf;padding:5px;"><?php echo $orders['delivery_date'];?></td>
-                                </tr>
-                                <tr style="border:2px solid #dfdfdf;">
-                                    <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Total Fee</b></td>
-                                    <td style="border:1px solid #dfdfdf;padding:5px;"><b>৳ <?php echo $orders['advance_amount']+$orders['due_amount'];?></b></td>  
-                                </tr>
-                                <tr style="border:2px solid #dfdfdf;">
-                                    <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Advance Fee</b></td>
-                                    <td style="border:1px solid #dfdfdf;padding:5px;"><b>৳ <?php echo $orders['advance_amount'];?></b></td>  
-                                </tr>
-                                <tr style="border:2px solid #dfdfdf;">
-                                    <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Due</b></td>
-                                    <td style="border:1px solid #dfdfdf;padding:5px;"><b>৳ <?php echo $orders['due_amount'];?></b></td>  
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-    
+<main style="color:#000 !important;line-height:15px;">
+  <section style="background:#fff;">
+   <div>
+    <div style="padding:2%">      
+        <div >
             <div style="width:100%;display:inline-block;">
-                <div style="float:left">
-                    <!-- <div style="margin-bottom:20px 0;"><img style="width:200px;height:70px" src="upload/<?php //echo $invoice['signature'];?>" alt=""></span></div> -->
-                    <div style="margin-bottom:20px 0;">&nbsp;<img style="width:200px;height:70px" id="sign" src="cid:signature.png" alt="signature"></span></div>
-                    <div style="margin-bottom:20px 0">Signature</div>
+                <div style="float:left;">
+                    <h2 style="color:#065CB6;font-size:30px;font-weight:700;margin:0px;"><?php echo $invoice['name'];?></h2>
+                    <p><?php echo $invoice['address'];?></p>
+                    <p><?php echo $invoice['email'];?></p>
                 </div>
-                <div style="float:right;">
-                    <div style="margin-bottom:0px">Congratulations on the warranty.</div>
-                    <div style="margin-bottom:27px">Copyright&copy; <?php echo $invoice['website'];?> </div>
+                <div style="float:right;padding-top:30px;text-align:right">
+                    <p><?php echo $invoice['phone'];?></p>
+                    <p style="margin:0;"><?php echo $invoice['whatsapp'];?></p>
+                </div>                
+            </div>
+            <div><hr></div>
+
+            <div style="padding-top:20px;">
+                <p><b>Date:</b> <?php $time = time();echo date('d-m-y',$time);?></p>
+                <p><b>Status:</b> <span ><?php echo $option;?></span></p>
+            </div>
+
+            <div>
+                <div style="color:#065CB6;padding:20px 0;font-size:22px;font-weight:700">Invoice Bill</div>
+                <div style="border:2px solid #E5E5E5;padding:3px 10px;">
+                    <p><b>Name: </b> <?php echo $customer['name'];?></p>
+                    <p><b>Email: </b> <?php echo $customer['email'];?></p>
+                    <p><b>Phone: </b> <?php echo $customer['phone'];?></p>
+                    <p><b>Address: </b> <?php echo $customer['address'];?></p>
                 </div>
             </div>
-    
             
-          </div>
+            <div style="overflow:auto;">
+                <div >
+                    <table style="text-align:left;margin:30px auto;width:100%;border-collapse: collapse;">
+                        <thead>                     
+                            <tr style="border:2px solid #dfdfdf;font-size:15px;">
+                                <th style="border:1px solid #dfdfdf;padding:5px;">
+                                    Product Name
+                                </th>
+                                <th style="border:1px solid #dfdfdf;padding:5px;">
+                                    Brand
+                                </th>
+                                <th style="border:1px solid #dfdfdf;padding:5px;">
+                                    Category
+                                </th>
+                                <th style="border:1px solid #dfdfdf;padding:5px;">
+                                    Receive Date
+                                </th>
+                                <th style="border:1px solid #dfdfdf;padding:5px;">
+                                    Delivery Date
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody >
+                            <tr style="border:2px solid #dfdfdf;">
+                                <td style="border:1px solid #dfdfdf;padding:5px;"><?php echo $orders['product_name'];?></td>
+                                <td style="border:1px solid #dfdfdf;padding:5px;"><?php echo $orders['brand'];?></td>
+                                <td style="border:1px solid #dfdfdf;padding:5px;"><?php echo $orders['category'];?></td>
+                                <td style="border:1px solid #dfdfdf;padding:5px;"><?php echo $orders['receive_date'];?></td>
+                                <td style="border:1px solid #dfdfdf;padding:5px;"><?php echo $orders['delivery_date'];?></td>
+                            </tr>
+                            <tr style="border:2px solid #dfdfdf;">
+                                <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Total Fee</b></td>
+                                <td style="border:1px solid #dfdfdf;padding:5px;"><b>৳ <?php echo $orders['advance_amount']+$orders['due_amount'];?></b></td>  
+                            </tr>
+                            <tr style="border:2px solid #dfdfdf;">
+                                <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Advance Fee</b></td>
+                                <td style="border:1px solid #dfdfdf;padding:5px;"><b>৳ <?php echo $orders['advance_amount'];?></b></td>  
+                            </tr>
+                            <tr style="border:2px solid #dfdfdf;">
+                                <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Due</b></td>
+                                <td style="border:1px solid #dfdfdf;padding:5px;"><b>৳ <?php echo $orders['due_amount'];?></b></td>  
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        <div style="width:100%;display:inline-block;">
+            <div style="float:left;width:40%">
+                <!-- <div><img style="width:115px;height:30px" src="upload/<?php //echo $invoice['signature'];?>" alt=""></span></div> -->
+                <div><img style="width:115px;height:30px" id="sign" src="cid:signature.png" alt="signature"></span></div>
+                <div>Signature</div>
+            </div>
+            <div style="float:right;width:60%;text-align:right;padding-top:20px;">
+                <div>Congratulations on the warranty.</div>
+                <div>Copyright&copy; <?php echo $invoice['website'];?> </div>
+            </div>
         </div>
-      </section>
-    </main>
+
+        
+      </div>
+    </div>
+  </section>
+</main>
     
         <?php $my_var = ob_get_clean();
     
@@ -266,103 +266,103 @@ ob_start(); ?>
 
     }elseif($option=='delivery'){
         ob_start(); ?>
-        <main style="color:#000 !important;">
-          <section style="background:#fff;">
-           <div>
-            <div style="padding:2%">      
-                <div >
-                    <div style="width:100%;display:inline-block;">
-                        <div style="float:left;">
-                            <h2 style="color:#065CB6;padding:5px 0;font-size:30px;font-weight:700;margin:0px;"><?php echo $invoice['name'];?></h2>
-                            <p><?php echo $invoice['address'];?></p>
-                            <p><?php echo $invoice['email'];?></p>
-                        </div>
-                        <div style="float:right;padding-top:35px;text-align:right">
-                            <p><b>Phone: </b> <?php echo $invoice['phone'];?></p>
-                            <p style="margin:0;"><b>What's app: </b><?php echo $invoice['whatsapp'];?></p>
-                        </div>                
-                    </div>
-                    <div> <hr></div>
-        
-                    <div style="padding-top:20px;">
-                        <p><b>Date:</b> <?php $time = time();echo date('d-m-y',$time);?></p>
-                        <p><b>Status:</b> <span ><?php echo $option;?></span></p>
-                    </div>
-        
-                    <div>
-                        <div style="color:#065CB6;padding:20px 0;font-size:22px;font-weight:700">Invoice Bill</div>
-                        <div style="border:2px solid #E5E5E5;padding:3px 10px;">
-                            <p><b>Name: </b> <?php echo $customer['name'];?></p>
-                            <p><b>Email: </b> <?php echo $customer['email'];?></p>
-                            <p><b>Phone: </b> <?php echo $customer['phone'];?></p>
-                            <p><b>Address: </b> <?php echo $customer['address'];?></p>
-                        </div>
-                    </div>
-                    
-                    <div style="overflow:auto;">
-                        <div >
-                            <table style="text-align:left;margin:30px auto;width:100%;border-collapse: collapse;">
-                                <thead>                     
-                                    <tr style="border:2px solid #dfdfdf;font-size:15px;">
-                                        <th style="border:1px solid #dfdfdf;padding:5px;">
-                                            Product Name
-                                        </th>
-                                        <th style="border:1px solid #dfdfdf;padding:5px;">
-                                            Brand
-                                        </th>
-                                        <th style="border:1px solid #dfdfdf;padding:5px;">
-                                            Category
-                                        </th>
-                                        <th style="border:1px solid #dfdfdf;padding:5px;">
-                                            Receive Date
-                                        </th>
-                                        <th style="border:1px solid #dfdfdf;padding:5px;">
-                                            Delivery Date
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody >
-                                    <tr style="border:2px solid #dfdfdf;">
-                                        <td style="border:1px solid #dfdfdf;padding:5px;"><?php echo $orders['product_name'];?></td>
-                                        <td style="border:1px solid #dfdfdf;padding:5px;"><?php echo $orders['brand'];?></td>
-                                        <td style="border:1px solid #dfdfdf;padding:5px;"><?php echo $orders['category'];?></td>
-                                        <td style="border:1px solid #dfdfdf;padding:5px;"><?php echo $orders['receive_date'];?></td>
-                                        <td style="border:1px solid #dfdfdf;padding:5px;"><?php echo $orders['delivery_date'];?></td>
-                                    </tr>
-                                    <tr style="border:2px solid #dfdfdf;">
-                                        <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Total Fee</b></td>
-                                        <td style="border:1px solid #dfdfdf;padding:5px;"><b>৳ <?php echo $orders['advance_amount']+$orders['due_amount'];?></b></td>  
-                                    </tr>
-                                    <tr style="border:2px solid #dfdfdf;">
-                                        <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Advance Fee</b></td>
-                                        <td style="border:1px solid #dfdfdf;padding:5px;"><b>৳ <?php echo $orders['advance_amount'];?></b></td>  
-                                    </tr>
-                                    <tr style="border:2px solid #dfdfdf;">
-                                        <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Due</b></td>
-                                        <td style="border:1px solid #dfdfdf;padding:5px;"><b>৳ <?php echo $orders['due_amount'];?></b></td>  
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-        
-                <div style="width:100%;display:inline-block;">
-                    <div style="float:left">
-                        <!-- <div style="margin-bottom:20px 0;"><img style="width:200px;height:70px" src="upload/<?php //echo $invoice['signature'];?>" alt=""></span></div> -->
-                        <div style="margin-bottom:20px 0;">&nbsp;<img style="width:200px;height:70px" id="sign" src="cid:signature.png" alt="signature"></span></div>
-                        <div style="margin-bottom:20px 0">Signature</div>
-                    </div>
-                    <div style="float:right;">
-                        <div style="margin-bottom:0px">Congratulations on the warranty.</div>
-                        <div style="margin-bottom:27px">Copyright&copy; <?php echo $invoice['website'];?> </div>
-                    </div>
+<main style="color:#000 !important;line-height:15px;">
+  <section style="background:#fff;">
+   <div>
+    <div style="padding:2%">      
+        <div >
+            <div style="width:100%;display:inline-block;">
+                <div style="float:left;">
+                    <h2 style="color:#065CB6;font-size:30px;font-weight:700;margin:0px;"><?php echo $invoice['name'];?></h2>
+                    <p><?php echo $invoice['address'];?></p>
+                    <p><?php echo $invoice['email'];?></p>
                 </div>
-        
-                
-              </div>
+                <div style="float:right;padding-top:30px;text-align:right">
+                    <p><?php echo $invoice['phone'];?></p>
+                    <p style="margin:0;"><?php echo $invoice['whatsapp'];?></p>
+                </div>                
             </div>
-          </section>
-        </main>
+            <div><hr></div>
+
+            <div style="padding-top:20px;">
+                <p><b>Date:</b> <?php $time = time();echo date('d-m-y',$time);?></p>
+                <p><b>Status:</b> <span ><?php echo $option;?></span></p>
+            </div>
+
+            <div>
+                <div style="color:#065CB6;padding:20px 0;font-size:22px;font-weight:700">Invoice Bill</div>
+                <div style="border:2px solid #E5E5E5;padding:3px 10px;">
+                    <p><b>Name: </b> <?php echo $customer['name'];?></p>
+                    <p><b>Email: </b> <?php echo $customer['email'];?></p>
+                    <p><b>Phone: </b> <?php echo $customer['phone'];?></p>
+                    <p><b>Address: </b> <?php echo $customer['address'];?></p>
+                </div>
+            </div>
+            
+            <div style="overflow:auto;">
+                <div >
+                    <table style="text-align:left;margin:30px auto;width:100%;border-collapse: collapse;">
+                        <thead>                     
+                            <tr style="border:2px solid #dfdfdf;font-size:15px;">
+                                <th style="border:1px solid #dfdfdf;padding:5px;">
+                                    Product Name
+                                </th>
+                                <th style="border:1px solid #dfdfdf;padding:5px;">
+                                    Brand
+                                </th>
+                                <th style="border:1px solid #dfdfdf;padding:5px;">
+                                    Category
+                                </th>
+                                <th style="border:1px solid #dfdfdf;padding:5px;">
+                                    Receive Date
+                                </th>
+                                <th style="border:1px solid #dfdfdf;padding:5px;">
+                                    Delivery Date
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody >
+                            <tr style="border:2px solid #dfdfdf;">
+                                <td style="border:1px solid #dfdfdf;padding:5px;"><?php echo $orders['product_name'];?></td>
+                                <td style="border:1px solid #dfdfdf;padding:5px;"><?php echo $orders['brand'];?></td>
+                                <td style="border:1px solid #dfdfdf;padding:5px;"><?php echo $orders['category'];?></td>
+                                <td style="border:1px solid #dfdfdf;padding:5px;"><?php echo $orders['receive_date'];?></td>
+                                <td style="border:1px solid #dfdfdf;padding:5px;"><?php echo $orders['delivery_date'];?></td>
+                            </tr>
+                            <tr style="border:2px solid #dfdfdf;">
+                                <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Total Fee</b></td>
+                                <td style="border:1px solid #dfdfdf;padding:5px;"><b>৳ <?php echo $orders['advance_amount']+$orders['due_amount'];?></b></td>  
+                            </tr>
+                            <tr style="border:2px solid #dfdfdf;">
+                                <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Advance Fee</b></td>
+                                <td style="border:1px solid #dfdfdf;padding:5px;"><b>৳ <?php echo $orders['advance_amount'];?></b></td>  
+                            </tr>
+                            <tr style="border:2px solid #dfdfdf;">
+                                <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Due</b></td>
+                                <td style="border:1px solid #dfdfdf;padding:5px;"><b>৳ <?php echo $orders['due_amount'];?></b></td>  
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        <div style="width:100%;display:inline-block;">
+            <div style="float:left;width:40%">
+                <!-- <div><img style="width:115px;height:30px" src="upload/<?php //echo $invoice['signature'];?>" alt=""></span></div> -->
+                <div><img style="width:115px;height:30px" id="sign" src="cid:signature.png" alt="signature"></span></div>
+                <div>Signature</div>
+            </div>
+            <div style="float:right;width:60%;text-align:right;padding-top:20px;">
+                <div>Congratulations on the warranty.</div>
+                <div>Copyright&copy; <?php echo $invoice['website'];?> </div>
+            </div>
+        </div>
+
+        
+      </div>
+    </div>
+  </section>
+</main>
         
             <?php $my_var = ob_get_clean();
         
@@ -393,103 +393,103 @@ ob_start(); ?>
 
         }elseif($option=='success'){
             ob_start(); ?>
-            <main style="color:#000 !important;">
-              <section style="background:#fff;">
-               <div>
-                <div style="padding:2%">      
-                    <div >
-                        <div style="width:100%;display:inline-block;">
-                            <div style="float:left;">
-                                <h2 style="color:#065CB6;padding:5px 0;font-size:30px;font-weight:700;margin:0px;"><?php echo $invoice['name'];?></h2>
-                                <p><?php echo $invoice['address'];?></p>
-                                <p><?php echo $invoice['email'];?></p>
-                            </div>
-                            <div style="float:right;padding-top:35px;text-align:right">
-                                <p><b>Phone: </b> <?php echo $invoice['phone'];?></p>
-                                <p style="margin:0;"><b>What's app: </b><?php echo $invoice['whatsapp'];?></p>
-                            </div>                
-                        </div>
-                        <div> <hr></div>
-            
-                        <div style="padding-top:20px;">
-                            <p><b>Date:</b> <?php $time = time();echo date('d-m-y',$time);?></p>
-                            <p><b>Status:</b> <span ><?php echo $option;?></span></p>
-                        </div>
-            
-                        <div>
-                            <div style="color:#065CB6;padding:20px 0;font-size:22px;font-weight:700">Invoice Bill</div>
-                            <div style="border:2px solid #E5E5E5;padding:3px 10px;">
-                                <p><b>Name: </b> <?php echo $customer['name'];?></p>
-                                <p><b>Email: </b> <?php echo $customer['email'];?></p>
-                                <p><b>Phone: </b> <?php echo $customer['phone'];?></p>
-                                <p><b>Address: </b> <?php echo $customer['address'];?></p>
-                            </div>
-                        </div>
-                        
-                        <div style="overflow:auto;">
-                            <div >
-                                <table style="text-align:left;margin:30px auto;width:100%;border-collapse: collapse;">
-                                    <thead>                     
-                                        <tr style="border:2px solid #dfdfdf;font-size:15px;">
-                                            <th style="border:1px solid #dfdfdf;padding:5px;">
-                                                Product Name
-                                            </th>
-                                            <th style="border:1px solid #dfdfdf;padding:5px;">
-                                                Brand
-                                            </th>
-                                            <th style="border:1px solid #dfdfdf;padding:5px;">
-                                                Category
-                                            </th>
-                                            <th style="border:1px solid #dfdfdf;padding:5px;">
-                                                Receive Date
-                                            </th>
-                                            <th style="border:1px solid #dfdfdf;padding:5px;">
-                                                Delivery Date
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody >
-                                        <tr style="border:2px solid #dfdfdf;">
-                                            <td style="border:1px solid #dfdfdf;padding:5px;"><?php echo $orders['product_name'];?></td>
-                                            <td style="border:1px solid #dfdfdf;padding:5px;"><?php echo $orders['brand'];?></td>
-                                            <td style="border:1px solid #dfdfdf;padding:5px;"><?php echo $orders['category'];?></td>
-                                            <td style="border:1px solid #dfdfdf;padding:5px;"><?php echo $orders['receive_date'];?></td>
-                                            <td style="border:1px solid #dfdfdf;padding:5px;"><?php echo $orders['delivery_date'];?></td>
-                                        </tr>
-                                        <tr style="border:2px solid #dfdfdf;">
-                                            <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Total Fee</b></td>
-                                            <td style="border:1px solid #dfdfdf;padding:5px;"><b>৳ <?php echo $orders['advance_amount']+$orders['due_amount'];?></b></td>  
-                                        </tr>
-                                        <tr style="border:2px solid #dfdfdf;">
-                                            <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Advance Fee</b></td>
-                                            <td style="border:1px solid #dfdfdf;padding:5px;"><b>৳ <?php echo $orders['advance_amount'];?></b></td>  
-                                        </tr>
-                                        <tr style="border:2px solid #dfdfdf;">
-                                            <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Due</b></td>
-                                            <td style="border:1px solid #dfdfdf;padding:5px;"><b>৳ <?php echo $orders['due_amount'];?></b></td>  
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-            
-                    <div style="width:100%;display:inline-block;">
-                        <div style="float:left">
-                            <!-- <div style="margin-bottom:20px 0;"><img style="width:200px;height:70px" src="upload/<?php //echo $invoice['signature'];?>" alt=""></span></div> -->
-                            <div style="margin-bottom:20px 0;">&nbsp;<img style="width:200px;height:70px" id="sign" src="cid:signature.png" alt="signature"></span></div>
-                            <div style="margin-bottom:20px 0">Signature</div>
-                        </div>
-                        <div style="float:right;">
-                            <div style="margin-bottom:0px">Congratulations on the warranty.</div>
-                            <div style="margin-bottom:27px">Copyright&copy; <?php echo $invoice['website'];?> </div>
-                        </div>
-                    </div>
-            
-                    
-                  </div>
+<main style="color:#000 !important;line-height:15px;">
+  <section style="background:#fff;">
+   <div>
+    <div style="padding:2%">      
+        <div >
+            <div style="width:100%;display:inline-block;">
+                <div style="float:left;">
+                    <h2 style="color:#065CB6;font-size:30px;font-weight:700;margin:0px;"><?php echo $invoice['name'];?></h2>
+                    <p><?php echo $invoice['address'];?></p>
+                    <p><?php echo $invoice['email'];?></p>
                 </div>
-              </section>
-            </main>
+                <div style="float:right;padding-top:30px;text-align:right">
+                    <p><?php echo $invoice['phone'];?></p>
+                    <p style="margin:0;"><?php echo $invoice['whatsapp'];?></p>
+                </div>                
+            </div>
+            <div><hr></div>
+
+            <div style="padding-top:20px;">
+                <p><b>Date:</b> <?php $time = time();echo date('d-m-y',$time);?></p>
+                <p><b>Status:</b> <span ><?php echo $option;?></span></p>
+            </div>
+
+            <div>
+                <div style="color:#065CB6;padding:20px 0;font-size:22px;font-weight:700">Invoice Bill</div>
+                <div style="border:2px solid #E5E5E5;padding:3px 10px;">
+                    <p><b>Name: </b> <?php echo $customer['name'];?></p>
+                    <p><b>Email: </b> <?php echo $customer['email'];?></p>
+                    <p><b>Phone: </b> <?php echo $customer['phone'];?></p>
+                    <p><b>Address: </b> <?php echo $customer['address'];?></p>
+                </div>
+            </div>
+            
+            <div style="overflow:auto;">
+                <div >
+                    <table style="text-align:left;margin:30px auto;width:100%;border-collapse: collapse;">
+                        <thead>                     
+                            <tr style="border:2px solid #dfdfdf;font-size:15px;">
+                                <th style="border:1px solid #dfdfdf;padding:5px;">
+                                    Product Name
+                                </th>
+                                <th style="border:1px solid #dfdfdf;padding:5px;">
+                                    Brand
+                                </th>
+                                <th style="border:1px solid #dfdfdf;padding:5px;">
+                                    Category
+                                </th>
+                                <th style="border:1px solid #dfdfdf;padding:5px;">
+                                    Receive Date
+                                </th>
+                                <th style="border:1px solid #dfdfdf;padding:5px;">
+                                    Delivery Date
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody >
+                            <tr style="border:2px solid #dfdfdf;">
+                                <td style="border:1px solid #dfdfdf;padding:5px;"><?php echo $orders['product_name'];?></td>
+                                <td style="border:1px solid #dfdfdf;padding:5px;"><?php echo $orders['brand'];?></td>
+                                <td style="border:1px solid #dfdfdf;padding:5px;"><?php echo $orders['category'];?></td>
+                                <td style="border:1px solid #dfdfdf;padding:5px;"><?php echo $orders['receive_date'];?></td>
+                                <td style="border:1px solid #dfdfdf;padding:5px;"><?php echo $orders['delivery_date'];?></td>
+                            </tr>
+                            <tr style="border:2px solid #dfdfdf;">
+                                <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Total Fee</b></td>
+                                <td style="border:1px solid #dfdfdf;padding:5px;"><b>৳ <?php echo $orders['advance_amount']+$orders['due_amount'];?></b></td>  
+                            </tr>
+                            <tr style="border:2px solid #dfdfdf;">
+                                <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Advance Fee</b></td>
+                                <td style="border:1px solid #dfdfdf;padding:5px;"><b>৳ <?php echo $orders['advance_amount'];?></b></td>  
+                            </tr>
+                            <tr style="border:2px solid #dfdfdf;">
+                                <td style="border:1px solid #dfdfdf;padding:5px;" colspan="4"><b>Due</b></td>
+                                <td style="border:1px solid #dfdfdf;padding:5px;"><b>৳ <?php echo $orders['due_amount'];?></b></td>  
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        <div style="width:100%;display:inline-block;">
+            <div style="float:left;width:40%">
+                <!-- <div><img style="width:115px;height:30px" src="upload/<?php //echo $invoice['signature'];?>" alt=""></span></div> -->
+                <div><img style="width:115px;height:30px" id="sign" src="cid:signature.png" alt="signature"></span></div>
+                <div>Signature</div>
+            </div>
+            <div style="float:right;width:60%;text-align:right;padding-top:20px;">
+                <div>Congratulations on the warranty.</div>
+                <div>Copyright&copy; <?php echo $invoice['website'];?> </div>
+            </div>
+        </div>
+
+        
+      </div>
+    </div>
+  </section>
+</main>
             
                 <?php $my_var = ob_get_clean();
             

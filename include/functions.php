@@ -12,23 +12,23 @@ if(!session_start()){
 
         require 'PHPMailer/PHPMailerAutoload.php';
         $mail = new PHPMailer;
-        $mail->SMTPDebug = 4;                           // Enable verbose debug output
+        $mail->SMTPDebug = 4;
 
-        $mail->isSMTP();                                      // Set mailer to use SMTP
-        $mail->Host = $smtp_host;  // Specify main and backup SMTP servers
-        $mail->SMTPAuth = true;                               // Enable SMTP authentication
-        $mail->Username = $smtp_username;                 // SMTP username
-        $mail->Password = $smtp_password;                           // SMTP password
-        $mail->Port = $smtp_port;                                    // TCP port to connect to
-        $mail->SMTPSecure = $smtp_secure;                            // Enable TLS encryption, `ssl` also accepted
+        $mail->isSMTP();
+        $mail->Host = $smtp_host;
+        $mail->SMTPAuth = true;
+        $mail->Username = $smtp_username;
+        $mail->Password = $smtp_password;
+        $mail->Port = $smtp_port;
+        $mail->SMTPSecure = $smtp_secure;
 
         $mail->setFrom($site_email, $sitename);
-        $mail->addAddress($addres);     // Add a recipient
+        $mail->addAddress($addres);
         $mail->addReplyTo($site_email, 'Noreplay');
 
-        // $mail->addAttachment('../upload/signature.png', 'signature.png');    // Optional name
-        $mail->addEmbeddedImage('../upload/signature.png', 'signature.png');    // Optional name
-        $mail->isHTML(true);                                  // Set email format to HTML
+        // $mail->addAttachment('../upload/signature.png', 'signature.png');
+        $mail->addEmbeddedImage('upload/signature.png', 'signature.png');
+        $mail->isHTML(true);
 
         $mail->Subject = $subject;
         $mail->Body    = $body;
