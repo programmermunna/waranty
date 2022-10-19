@@ -492,7 +492,7 @@ if (isset($_GET['id'])) {
                         </div>
 
                         <div class="p-4 flex items-center justify-end gap-x-3 border-t mt-4">
-                            <button class="btn w-fit p-2 bg-blue-600 text-white rounded focus:ring-2" type="submit" name="add_brand">Create Brand</button>
+                            <button  class="btn w-fit p-2 bg-blue-600 text-white rounded focus:ring-2" type="submit" name="add_brand">Create Brand</button>
                             <button class="btn w-fit p-2 bg-red-400 text-white rounded focus:ring-2 hide_add_new_cat">Cancel</button>
                         </div>
                     </div>

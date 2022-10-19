@@ -15,7 +15,7 @@ ob_start(); ?>
 <main style="color:#000 !important;line-height:15px;">
   <section style="background:#fff;">
    <div>
-    <div style="padding:2%">      
+    <div style="padding:2%">          
         <div >
             <div style="width:100%;display:inline-block;">
                 <div style="float:left;">
