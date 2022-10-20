@@ -7,7 +7,7 @@
     <!-- Side Navbar Links -->
     <?php include("common/sidebar.php");?>
     <!-- Side Navbar Links -->
-
+ 
     <!-- Page Content -->
     <section class="content_wrapper">
     <h4 class="text-xl font-medium">Customer All</h4>
