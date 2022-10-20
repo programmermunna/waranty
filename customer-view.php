@@ -7,7 +7,7 @@ if(isset($_GET['id'])){
 }
 $row = mysqli_fetch_assoc(mysqli_query($conn,"SELECT * FROM customer WHERE id='$id'"));
 ?>
-<!-- Main Content -->
+<!-- Main Content --> 
 <main class="main_content">
     <!-- Side Navbar Links -->
     <?php include("common/sidebar.php");?>
