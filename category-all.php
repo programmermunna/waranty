@@ -13,7 +13,7 @@ if (isset($_POST['submit'])) {
         header("location:category-all.php?msg=$msg");
     } else {
         echo "not";
-    }
+    } 
 }
 
 if (isset($_POST['update'])) {
