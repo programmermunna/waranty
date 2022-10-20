@@ -9,7 +9,7 @@
 
     <!-- Page Content -->
     <section class="content_wrapper">
-        <!-- Page Details Title -->
+        <!-- Page Details Title --> 
 
         <!-- Page Main Content -->
         <section class="page_main_content">
