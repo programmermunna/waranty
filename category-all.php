@@ -1,6 +1,6 @@
 <!-- Header -->
 <?php include("common/header.php"); ?>
-<!-- Header -->
+<!-- Header --> 
 <?php
 if (isset($_POST['submit'])) {
     $category = $_POST['category'];
