@@ -25,7 +25,7 @@
                     <!-- <ul class="categories_ul"></ul> -->
 
 
-
+ 
 
 <?php 
 $category = mysqli_query($conn, "SELECT * FROM category");
