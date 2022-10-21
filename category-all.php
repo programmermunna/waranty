@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
     } else {
         echo "not"; 
     } 
-}
+} 
 
 if (isset($_POST['update'])) {
     $id = $_POST['id'];
