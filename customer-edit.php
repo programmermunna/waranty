@@ -25,7 +25,7 @@ if(isset($_POST['submit'])){
 }
 ?>
     <!-- Main Content -->
-    <main class="main_content">
+    <main class="main_content"> 
 <!-- Side Navbar Links -->
 <?php include("common/sidebar.php");?>
 <!-- Side Navbar Links -->
