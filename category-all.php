@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
         $msg = "Created a new category";
         header("location:category-all.php?msg=$msg");
     } else {
-        echo "not";
+        echo "not"; 
     } 
 }
 
