@@ -1,6 +1,6 @@
 <!-- Header -->
 <?php include("common/header.php");?>
-<!-- Header -->
+<!-- Header --> 
 
 <!-- Main Content -->
 <main class="main_content">
